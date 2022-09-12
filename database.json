@@ -1,0 +1,9 @@
+{
+  "dev": {
+    "driver": "pg",
+    "host": "127.0.0.1",
+    "database": "cc_builder",
+    "user": "go3",
+    "password": "postgres@go3"
+  }
+}

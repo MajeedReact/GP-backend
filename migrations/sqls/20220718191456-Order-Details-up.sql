@@ -1,0 +1,2 @@
+/* Replace with your SQL commands */
+CREATE TABLE Orders_Details(Orders_Details_Id SERIAL PRIMARY KEY,Quantity INT, Product_Id BIGINT REFERENCES Product(Product_Id), Order_Id BIGINT REFERENCES Orders(Order_Id), Seller_Id BIGINT REFERENCES Seller(Seller_id));

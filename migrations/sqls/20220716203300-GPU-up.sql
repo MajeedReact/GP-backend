@@ -1,0 +1,2 @@
+/* Replace with your SQL commands */
+CREATE TABLE GPU(GPU_Id SERIAL PRIMARY KEY ,GPU_Name VARCHAR, chipset varchar,  memory varchar, core_clock varchar, boost_clock varchar,  Manufacturer VARCHAR(30));

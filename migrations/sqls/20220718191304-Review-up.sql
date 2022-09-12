@@ -1,0 +1,2 @@
+/* Replace with your SQL commands */
+CREATE TABLE Review(Review_Id SERIAL PRIMARY KEY ,Created_at varchar,Description VARCHAR(500),Rating FLOAT,Product_Id BIGINT REFERENCES Product(Product_Id),Customer_Id BIGINT REFERENCES Customer(Customer_Id));
