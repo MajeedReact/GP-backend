@@ -40,7 +40,7 @@ const createOrder = async (req: Request, res: Response) => {
     )) as product;
     // console.log(decode.customer_id);
     //create a new order
-    console.log(productInfo.seller_id);
+
     const order: order = {
       order_status: "New",
       customer_id: decode.customer_id as number,
@@ -48,7 +48,6 @@ const createOrder = async (req: Request, res: Response) => {
       seller_id: productInfo.seller_id,
     };
 
-    console.log();
     const insertOrder = await store.createOrder(order);
 
     for (var item in product) {
@@ -87,8 +86,6 @@ const createOrder = async (req: Request, res: Response) => {
         product_id: product_id,
         qty: qty,
       };
-
-      console.log(order_details);
 
       let insertDetails = await store.insertOrderDetails(order_details);
 
@@ -129,8 +126,38 @@ const getOrderDetails = async (req: Request, res: Response) => {
   }
 };
 
+const getAllOrdersByCustomer = async (req: Request, res: Response) => {
+  try {
+    const token = req.cookies.token;
+    const decode = jwt.decode(token) as customer;
+
+    const result = await store.getAllOrdersByCustomer(
+      decode.customer_id as number
+    );
+
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error("An Error occured while retriving orders " + error);
+  }
+};
+
+const getAllOrdersBySeller = async (req: Request, res: Response) => {
+  try {
+    const token = req.cookies.token;
+    const decode = jwt.decode(token) as seller;
+
+    const result = await store.getAllOrdersBySeller(decode.seller_id as number);
+
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error("An Error occured while retriving orders " + error);
+  }
+};
+
 const orders_route = (app: express.Application) => {
   app.get("/orders", checkAuth, allOrders);
+  app.get("/orders/customer", checkAuth, getAllOrdersByCustomer);
+  app.get("/orders/seller", checkAuth, getAllOrdersBySeller);
   app.get("/orders/:id", checkAuth, getOrderDetails);
   app.post("/orders/new", checkAuth, createOrder);
 };

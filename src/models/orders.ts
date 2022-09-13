@@ -35,7 +35,38 @@ export class orders {
   }
 
   // TODO get all orders by customer
+  async getAllOrdersByCustomer(customer_id: number): Promise<order[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT * FROM orders WHERE customer_id = $1";
+
+      const result = await conn.query(sql, [customer_id]);
+
+      conn.release;
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive orders ${error}`);
+    }
+  }
+
   // TODO get all orders by seller
+  async getAllOrdersBySeller(seller_id: number): Promise<orders[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT * FROM orders WHERE seller_id = $1";
+
+      const result = await conn.query(sql, [seller_id]);
+
+      conn.release;
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive orders ${error}`);
+    }
+  }
 
   //get order details using order id update this later
   async getOrderWithId(id: number): Promise<order> {
@@ -74,33 +105,7 @@ export class orders {
     }
   }
 
-  //get customer id from order and compare it with the customer id from the token to ensure they are the same
-  async orderCheck(customer_id: number, order_id: number): Promise<boolean> {
-    try {
-      const conn = await client.connect();
-
-      const sql =
-        "SELECT customer_id FROM orders WHERE order_id = $1 AND customer_id = $2";
-
-      const result = await conn.query(sql, [order_id, customer_id]);
-
-      conn.release();
-
-      if (result.rows.length) {
-        return true;
-      } else return false;
-    } catch (error) {
-      throw new Error(
-        "An Error occured while retriving order with id" +
-          customer_id +
-          " " +
-          error
-      );
-    }
-  }
-
   // TODO check if all product has the samee seller
-
   async createOrder(o: order): Promise<order> {
     try {
       const conn = await client.connect();
