@@ -5,12 +5,12 @@ export type order = {
   order_status: string;
   customer_id: number;
   order_date: string;
+  seller_id: number;
 };
 
 export type order_details = {
   order_details_id?: number;
   order_id: number;
-  seller_id: number;
   product_id: number;
   qty: number;
 };
@@ -100,12 +100,13 @@ export class orders {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO orders(order_status, customer_id, order_date) VALUES ($1, $2, $3) RETURNING *";
+        "INSERT INTO orders(order_status, customer_id, order_date, seller_id) VALUES ($1, $2, $3, $4) RETURNING *";
 
       const result = await conn.query(sql, [
         o.order_status,
         o.customer_id,
         o.order_date,
+        o.seller_id,
       ]);
 
       conn.release;
@@ -121,11 +122,10 @@ export class orders {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO orders_details(order_id, seller_id, product_id, quantity ) VALUES ($1, $2, $3, $4)";
+        "INSERT INTO orders_details(order_id, product_id, quantity ) VALUES ($1, $2, $3)";
 
       const result = await conn.query(sql, [
         od.order_id,
-        od.seller_id,
         od.product_id,
         od.qty,
       ]);

@@ -28,36 +28,46 @@ const createOrder = async (req: Request, res: Response) => {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
 
-    const product2 = req.body.product;
+    //if placing a purchase is a seller return 401
+    if (decode.role_id == 2)
+      return res.status(403).json("Seller cannot buy orders");
 
+    const product = req.body.product;
+
+    const productInfo = (await productModel.getProductWithId(
+      product[0].id as number
+    )) as product;
     // console.log(decode.customer_id);
     //create a new order
+    console.log(productInfo.seller_id);
     const order: order = {
       order_status: "New",
       customer_id: decode.customer_id as number,
       order_date: date,
+      seller_id: productInfo.seller_id,
     };
 
+    console.log();
     const insertOrder = await store.createOrder(order);
 
-    for (var item in product2) {
+    for (var item in product) {
       // console.log(
       //   `product id: ${product2[item].id} product quantity: ${product2[item].qty} seller id: ${product2[item].seller_id}`
       // );
 
-      let product_id: number = await product2[item].id;
+      let product_id: number = await product[item].id;
       const productInfo = (await productModel.getProductWithId(
         product_id
       )) as product;
-      const seller_id = productInfo.seller_id as number;
-      console.log(productInfo.price);
+      // const seller_id = productInfo.seller_id as number;
+
       if (productInfo.seller_id == undefined || productInfo.seller_id == null) {
         res.status(404).json("No Seller id found");
         return;
       }
 
       //check product quantity
-      let qty: number = await product2[item].qty;
+      let qty: number = await product[item].qty;
       if (productInfo.product_quantity < qty) {
         res.json("Invalid quantity");
         return;
@@ -73,7 +83,6 @@ const createOrder = async (req: Request, res: Response) => {
 
       let order_details: order_details = {
         order_id: insertOrder.order_id as number,
-        seller_id: seller_id,
         product_id: product_id,
         qty: qty,
       };
