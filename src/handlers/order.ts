@@ -5,6 +5,7 @@ import { customer } from "../models/customers";
 import { product, products } from "../models/product";
 import checkAuth from "../middleware/auth";
 import moment from "moment";
+import { seller } from "../models/Sellers";
 
 const store = new orders();
 const productModel = new products();
@@ -106,17 +107,19 @@ const getOrderDetails = async (req: Request, res: Response) => {
   try {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
-    const check = await store.orderCheck(
-      decode.customer_id as number,
+    const decodeSeller = jwt.decode(token) as seller;
+
+    const result = await store.getOrderDetails(
       req.params.id as unknown as number
     );
 
-    if (check || decode.role_id == 3) {
-      // TODO make sure seller are able to check order
-      const result = await store.getOrderDetails(
-        req.params.id as unknown as number
-      );
-      res.json(result);
+    //if seller id/customer id equals to the seller id/customer id in order then show order_details
+    if (
+      result[0].customer_id == decode.customer_id ||
+      decode.role_id == 3 ||
+      result[0].seller_id == decodeSeller.seller_id
+    ) {
+      res.status(200).json(result);
     } else {
       res.status(403).json("Unauthorized");
       return;

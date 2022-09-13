@@ -13,6 +13,8 @@ export type order_details = {
   order_id: number;
   product_id: number;
   qty: number;
+  seller_id?: number;
+  customer_id?: number;
 };
 
 export class orders {
@@ -31,6 +33,9 @@ export class orders {
       throw new Error(`Could not retrive orders ${error}`);
     }
   }
+
+  // TODO get all orders by customer
+  // TODO get all orders by seller
 
   //get order details using order id update this later
   async getOrderWithId(id: number): Promise<order> {
@@ -54,7 +59,8 @@ export class orders {
     try {
       const conn = await client.connect();
 
-      const sql = "SELECT * FROM orders_details WHERE order_id = $1";
+      const sql =
+        "SELECT * FROM orders_details INNER JOIN orders on orders.order_id = $1";
 
       const result = await conn.query(sql, [id]);
 
