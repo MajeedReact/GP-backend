@@ -145,10 +145,17 @@ const getAllOrdersBySeller = async (req: Request, res: Response) => {
   try {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as seller;
-
-    const result = await store.getAllOrdersBySeller(decode.seller_id as number);
-
-    res.status(200).json(result);
+    console.log(decode.role_id);
+    //if role is seller
+    if (decode.role_id == 2) {
+      const result = await store.getAllOrdersBySeller(
+        decode.seller_id as number
+      );
+      res.status(200).json(result);
+    } else {
+      res.status(403).json("Forbidden");
+      return;
+    }
   } catch (error) {
     throw new Error("An Error occured while retriving orders " + error);
   }

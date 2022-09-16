@@ -12,6 +12,7 @@ const checkAuth = (req: Request, res: Response, next: Function) => {
     console.log(decode);
     if (!token) {
       res.status(401).json("Unauthorized");
+      return;
     }
     if (!decode) {
       res.status(401).json("Invalid Token");
