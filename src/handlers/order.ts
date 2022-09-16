@@ -30,6 +30,9 @@ const createOrder = async (req: Request, res: Response) => {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
 
+    //generate unique order authentication
+    const uniqueID = uuidv4();
+    console.log(uniqueID.substring(0, 6));
     //if placing a purchase is a seller return 401
     if (decode.role_id == 2)
       return res.status(403).json("Seller cannot buy orders");
@@ -47,31 +50,27 @@ const createOrder = async (req: Request, res: Response) => {
       customer_id: decode.customer_id as number,
       order_date: date,
       seller_id: productInfo.seller_id,
+      order_auth: uniqueID.substring(0, 6),
     };
 
     const insertOrder = await store.createOrder(order);
 
-    for (var item in product) {
-      // console.log(
-      //   `product id: ${product2[item].id} product quantity: ${product2[item].qty} seller id: ${product2[item].seller_id}`
-      // );
-
+    for (var item = 0; item < product.length; item++) {
       let product_id: number = await product[item].id;
       const productInfo = (await productModel.getProductWithId(
         product_id
       )) as product;
-      // const seller_id = productInfo.seller_id as number;
 
       if (productInfo.seller_id == undefined || productInfo.seller_id == null) {
         res.status(404).json("No Seller id found");
-        return;
+        break;
       }
 
       //check product quantity
       let qty: number = await product[item].qty;
       if (productInfo.product_quantity < qty) {
         res.json("Invalid quantity");
-        return;
+        break;
       }
       //minus the product quantity from ordered quantity
       const updatedQty = (productInfo.product_quantity as number) - qty;
@@ -82,6 +81,7 @@ const createOrder = async (req: Request, res: Response) => {
         updatedQty
       );
 
+      console.log("Product id: " + product_id);
       let order_details: order_details = {
         order_id: insertOrder.order_id as number,
         product_id: product_id,
@@ -92,7 +92,6 @@ const createOrder = async (req: Request, res: Response) => {
 
       console.log(`Successfully inserted ${insertDetails}`);
     }
-
     res.json(insertOrder);
   } catch (error) {
     throw new Error("An Error occured while creating an order " + error);
@@ -107,20 +106,33 @@ const getOrderDetails = async (req: Request, res: Response) => {
     const decode = jwt.decode(token) as customer;
     const decodeSeller = jwt.decode(token) as seller;
 
-    const result = await store.getOrderDetails(
-      req.params.id as unknown as number
-    );
-
+    //if seller or admin
+    if (decode.customer_id || decode.role_id == 3) {
+      const result = await store.getOrderDetails(
+        req.params.id as unknown as number
+      );
+      //check if order has the same requested customer id
+      if (
+        (result[0].customer_id == decode.customer_id && result.length > 1) ||
+        decode.role_id == 3
+      ) {
+        res.status(200).json(result);
+      } else {
+        res.status(403).json("Unauthorized");
+        return;
+      }
+    }
     //if seller id/customer id equals to the seller id/customer id in order then show order_details
-    if (
-      result[0].customer_id == decode.customer_id ||
-      decode.role_id == 3 ||
-      result[0].seller_id == decodeSeller.seller_id
-    ) {
-      res.status(200).json(result);
-    } else {
-      res.status(403).json("Unauthorized");
-      return;
+    if (decodeSeller.seller_id) {
+      const result = await store.getOrderDetailSeller(
+        req.params.id as unknown as number
+      );
+      if (result[0].seller_id == decodeSeller.seller_id && result.length > 1) {
+        res.status(200).json(result);
+      } else {
+        res.status(403).json("Unauthorized");
+        return;
+      }
     }
   } catch (error) {
     throw new Error("an Error occured while getting order details " + error);
@@ -144,9 +156,6 @@ const getAllOrdersByCustomer = async (req: Request, res: Response) => {
 
 const getAllOrdersBySeller = async (req: Request, res: Response) => {
   try {
-    const uniqueID = uuidv4();
-    console.log("order_auth: " + uniqueID);
-
     const token = req.cookies.token;
     const decode = jwt.decode(token) as seller;
     console.log(decode.role_id);

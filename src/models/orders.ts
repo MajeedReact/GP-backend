@@ -6,6 +6,7 @@ export type order = {
   customer_id: number;
   order_date: string;
   seller_id: number;
+  order_auth: string;
 };
 
 export type order_details = {
@@ -56,7 +57,8 @@ export class orders {
     try {
       const conn = await client.connect();
 
-      const sql = "SELECT * FROM orders WHERE seller_id = $1";
+      const sql =
+        "SELECT order_id, order_status, order_date, customer_id FROM orders WHERE seller_id = $1;";
 
       const result = await conn.query(sql, [seller_id]);
 
@@ -68,30 +70,32 @@ export class orders {
     }
   }
 
-  //get order details using order id update this later
-  async getOrderWithId(id: number): Promise<order> {
-    try {
-      const conn = await client.connect();
-
-      const sql = "SELECT * FROM orders_details WHERE order_id = $1";
-
-      const result = await conn.query(sql, [id]);
-
-      conn.release;
-
-      return result.rows[0];
-    } catch (error) {
-      throw new Error(`Could not retrive order with id ${id} ${error}`);
-    }
-  }
-
   // TODO get all order details for specific order
   async getOrderDetails(id: number): Promise<order_details[]> {
     try {
       const conn = await client.connect();
 
       const sql =
-        "SELECT * FROM orders_details INNER JOIN orders on orders.order_id = $1";
+        "SELECT * FROM orders INNER JOIN orders_details on orders_details.order_id = orders.order_id WHERE orders.order_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(
+        "An Error occured while retriving order with id" + id + " " + error
+      );
+    }
+  }
+
+  async getOrderDetailSeller(id: number): Promise<order_details[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "SELECT * FROM orders_details INNER JOIN(SELECT orders.order_id, orders.order_status, orders.customer_id, orders.seller_id FROM orders) o on o.order_id = orders_details.order_id WHERE o.order_id = $1;";
 
       const result = await conn.query(sql, [id]);
 
@@ -111,16 +115,17 @@ export class orders {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO orders(order_status, customer_id, order_date, seller_id) VALUES ($1, $2, $3, $4) RETURNING *";
+        "INSERT INTO orders(order_status, customer_id, order_date, seller_id, order_auth) VALUES ($1, $2, $3, $4, $5) RETURNING *";
 
       const result = await conn.query(sql, [
         o.order_status,
         o.customer_id,
         o.order_date,
         o.seller_id,
+        o.order_auth,
       ]);
 
-      conn.release;
+      conn.release();
 
       return result.rows[0];
     } catch (error) {
@@ -141,7 +146,7 @@ export class orders {
         od.qty,
       ]);
 
-      conn.release;
+      conn.release();
 
       return result.rows[0];
     } catch (error) {

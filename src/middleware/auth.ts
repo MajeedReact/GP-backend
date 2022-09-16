@@ -9,7 +9,7 @@ const checkAuth = (req: Request, res: Response, next: Function) => {
   const token = req.cookies.token;
   try {
     const decode = jwt.verify(token, process.env.TOKEN_SECRET as Secret);
-    console.log(decode);
+
     if (!token) {
       res.status(401).json("Unauthorized");
       return;
