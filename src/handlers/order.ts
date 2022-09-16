@@ -7,9 +7,11 @@ import checkAuth from "../middleware/auth";
 import moment from "moment";
 import { seller } from "../models/Sellers";
 import { v4 as uuidv4 } from "uuid";
+import { authorization } from "../middleware/authorization";
 
 const store = new orders();
 const productModel = new products();
+const auth = new authorization();
 
 //admin use
 const allOrders = async (_req: Request, res: Response) => {
@@ -63,14 +65,14 @@ const createOrder = async (req: Request, res: Response) => {
 
       if (productInfo.seller_id == undefined || productInfo.seller_id == null) {
         res.status(404).json("No Seller id found");
-        break;
+        return;
       }
 
       //check product quantity
       let qty: number = await product[item].qty;
       if (productInfo.product_quantity < qty) {
         res.json("Invalid quantity");
-        break;
+        return;
       }
       //minus the product quantity from ordered quantity
       const updatedQty = (productInfo.product_quantity as number) - qty;
@@ -174,12 +176,34 @@ const getAllOrdersBySeller = async (req: Request, res: Response) => {
   }
 };
 
+const updateOrderStatus = async (req: Request, res: Response) => {
+  try {
+    const order_auth = req.body.order_auth;
+    const result = await store.updateOrder(
+      req.params.id as unknown as number,
+      "Complete",
+      order_auth
+    );
+
+    if (!result) {
+      res.status(403).json("order authentication is not correct");
+      return;
+    }
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An error occured updating order with id " + req.params.id + ": " + error
+    );
+  }
+};
+
 const orders_route = (app: express.Application) => {
-  app.get("/orders", checkAuth, allOrders);
+  app.get("/orders", checkAuth, auth.adminRole, allOrders);
   app.get("/orders/customer", checkAuth, getAllOrdersByCustomer);
   app.get("/orders/seller", checkAuth, getAllOrdersBySeller);
   app.get("/orders/:id", checkAuth, getOrderDetails);
   app.post("/orders/new", checkAuth, createOrder);
+  app.put("/orders/:id", updateOrderStatus);
 };
 
 export default orders_route;

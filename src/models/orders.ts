@@ -27,7 +27,7 @@ export class orders {
 
       const result = await conn.query(sql);
 
-      conn.release;
+      conn.release();
 
       return result.rows;
     } catch (error) {
@@ -44,7 +44,7 @@ export class orders {
 
       const result = await conn.query(sql, [customer_id]);
 
-      conn.release;
+      conn.release();
 
       return result.rows;
     } catch (error) {
@@ -62,7 +62,7 @@ export class orders {
 
       const result = await conn.query(sql, [seller_id]);
 
-      conn.release;
+      conn.release();
 
       return result.rows;
     } catch (error) {
@@ -159,24 +159,24 @@ export class orders {
     order_id: number,
     order_status: String,
     order_auth: String
-  ) {
+  ): Promise<order> {
     try {
       const conn = await client.connect();
 
       const sql =
-        "UPDATE orders SET order_status = $1 WHERE order_id = $2 AND order_auth = $3";
+        "UPDATE orders SET order_status = $1 WHERE order_id = $2 AND order_auth = $3 RETURNING *";
 
       const result = await conn.query(sql, [
-        order_id,
         order_status,
+        order_id,
         order_auth,
       ]);
 
-      conn.release;
+      conn.release();
 
       return result.rows[0];
     } catch (error) {
-      throw new Error(`Could not insert order details ${error}`);
+      throw new Error(`Could not update order with id ${order_id}: ${error}`);
     }
   }
   async cancelOrder(s: order) {}
