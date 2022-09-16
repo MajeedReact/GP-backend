@@ -6,6 +6,7 @@ import { product, products } from "../models/product";
 import checkAuth from "../middleware/auth";
 import moment from "moment";
 import { seller } from "../models/Sellers";
+import { v4 as uuidv4 } from "uuid";
 
 const store = new orders();
 const productModel = new products();
@@ -143,6 +144,9 @@ const getAllOrdersByCustomer = async (req: Request, res: Response) => {
 
 const getAllOrdersBySeller = async (req: Request, res: Response) => {
   try {
+    const uniqueID = uuidv4();
+    console.log("order_auth: " + uniqueID);
+
     const token = req.cookies.token;
     const decode = jwt.decode(token) as seller;
     console.log(decode.role_id);

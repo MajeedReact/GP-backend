@@ -150,6 +150,29 @@ export class orders {
   }
 
   //TODO update order by seller or admin
-  async updateOrder(s: order) {}
+  async updateOrder(
+    order_id: number,
+    order_status: String,
+    order_auth: String
+  ) {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "UPDATE orders SET order_status = $1 WHERE order_id = $2 AND order_auth = $3";
+
+      const result = await conn.query(sql, [
+        order_id,
+        order_status,
+        order_auth,
+      ]);
+
+      conn.release;
+
+      return result.rows[0];
+    } catch (error) {
+      throw new Error(`Could not insert order details ${error}`);
+    }
+  }
   async cancelOrder(s: order) {}
 }
