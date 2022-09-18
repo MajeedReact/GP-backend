@@ -1,0 +1,704 @@
+{
+ "memory_name": [
+  {
+   "name": "Corsair Vengeance LPX 16 GB",
+   "url": "https://pcpartpicker.com/product/p6RFf7/corsair-memory-cmk16gx4m2b3200c16",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/khmFf7/corsair-vengeance-rgb-pro-32-gb-2-x-16-gb-ddr4-3600-memory-cmw32gx4m2z3600c18",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 16 GB",
+   "url": "https://pcpartpicker.com/product/QDhKHx/corsair-vengeance-rgb-pro-16gb-2-x-8gb-ddr4-3200-memory-cmw16gx4m2c3200c16",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Ripjaws V 32 GB",
+   "url": "https://pcpartpicker.com/product/kXbkcf/gskill-memory-f43200c16d32gvk",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance LPX 32 GB",
+   "url": "https://pcpartpicker.com/product/Yg3mP6/corsair-vengeance-lpx-32-gb-2-x-16-gb-ddr4-3600-memory-cmk32gx4m2d3600c18",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Ripjaws V 16 GB",
+   "url": "https://pcpartpicker.com/product/Cf98TW/gskill-ripjaws-v-series-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-f4-3200c16d-16gvkb",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 16 GB",
+   "url": "https://pcpartpicker.com/product/vfDJ7P/corsair-vengeance-rgb-pro-16gb-2-x-8gb-ddr4-3200-memory-cmw16gx4m2c3200c16w",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance LPX 16 GB",
+   "url": "https://pcpartpicker.com/product/VNJtt6/corsair-16-gb-2-x-8-gb-ddr4-3600-memory-cmk16gx4m2d3600c18",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Silicon Power GAMING 16 GB",
+   "url": "https://pcpartpicker.com/product/P4FKHx/silicon-power-sp016gxlzu320bdaj5-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-sp016gxlzu320bdaj5",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Silicon Power"
+  },
+  {
+   "name": "Corsair Vengeance 32 GB",
+   "url": "https://pcpartpicker.com/product/4kmmP6/corsair-vengeance-32-gb-2-x-16-gb-ddr5-5600-cl36-memory-cmk32gx5m2b5600c36",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-5600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro SL 32 GB",
+   "url": "https://pcpartpicker.com/product/bjjNnQ/corsair-vengeance-rgb-pro-sl-32-gb-2-x-16-gb-ddr4-3600-cl18-memory-cmh32gx4m2d3600c18w",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/6jBTwP/gskill-trident-z-rgb-16gb-2-x-8gb-ddr4-3600-memory-f4-3600c18d-16gtzrx",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "TEAMGROUP T-Force Vulcan Z 16 GB",
+   "url": "https://pcpartpicker.com/product/z3VD4D/team-t-force-vulcan-z-16-gb-2-x-8-gb-ddr4-3200-memory-tlzgd416g3200hc16cdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "G.Skill Trident Z Neo 32 GB",
+   "url": "https://pcpartpicker.com/product/w3FKHx/gskill-trident-z-neo-32-gb-2-x-16-gb-ddr4-3600-cl16-memory-f4-3600c16d-32gtznc",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance LPX 32 GB",
+   "url": "https://pcpartpicker.com/product/W6ndnQ/corsair-vengeance-lpx-32-gb-2-x-16-gb-ddr4-3200-memory-cmk32gx4m2e3200c16",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Dominator Platinum 128 GB",
+   "url": "https://pcpartpicker.com/product/nyYWGX/corsair-dominator-platinum-128gb-8-x-16gb-ddr4-3200-memory-cmd128gx4m8b3200c16",
+   "memory_size": "8 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/XDXJ7P/corsair-dominator-platinum-rgb-32-gb-2-x-16-gb-ddr5-6200-cl36-memory-cmt32gx5m2x6200c36",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-6200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Ripjaws V 16 GB",
+   "url": "https://pcpartpicker.com/product/jBZzK8/gskill-ripjaws-v-16-gb-2-x-8-gb-ddr4-3600-memory-f4-3600c16d-16gvkc",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/jxH8TW/gskill-trident-z-rgb-32-gb-2-x-16-gb-ddr4-3600-memory-f4-3600c16d-32gtzrc",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 16 GB",
+   "url": "https://pcpartpicker.com/product/XWGnTW/corsair-vengeance-rgb-pro-16-gb-2-x-8-gb-ddr4-3600-memory-cmw16gx4m2d3600c18",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/TBfFf7/team-t-force-delta-rgb-16-gb-2-x-8-gb-ddr4-3600-cl18-memory-tf4d416g3600hc18jdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "G.Skill Ripjaws V 32 GB",
+   "url": "https://pcpartpicker.com/product/zcH8TW/gskill-ripjaws-v-32-gb-2-x-16-gb-ddr4-3600-memory-f4-3600c16d-32gvkc",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/gRMTwP/gskill-trident-z-rgb-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gtzr",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Kingston FURY Beast 16 GB",
+   "url": "https://pcpartpicker.com/product/6YfnTW/kingston-fury-beast-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-kf432c16bbk216",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/3yQG3C/corsair-vengeance-rgb-pro-32gb-4-x-8gb-ddr4-3200-memory-cmw32gx4m4c3200c16",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Trident Z5 RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/mhJgXL/gskill-trident-z5-rgb-32-gb-2-x-16-gb-ddr5-6000-cl36-memory-f5-6000j3636f16gx2-tz5rk",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-6000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Silicon Power GAMING 32 GB",
+   "url": "https://pcpartpicker.com/product/B8QcCJ/silicon-power-gaming-32-gb-2-x-16-gb-ddr4-3200-cl16-memory-sp032gxlzu320bdaj7",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Silicon Power"
+  },
+  {
+   "name": "Corsair Vengeance LPX 16 GB",
+   "url": "https://pcpartpicker.com/product/mpx2FT/corsair-vengeance-lpx-16-gb-2-x-8-gb-ddr4-3200-memory-cmk16gx4m2e3200c16",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Vulcan Z 16 GB",
+   "url": "https://pcpartpicker.com/product/6wGxFT/team-t-force-vulcan-z-16-gb-2-x-8-gb-ddr4-3000-memory-tlzgd416g3000hc16cdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3000",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "G.Skill Ripjaws V 16 GB",
+   "url": "https://pcpartpicker.com/product/n6RgXL/gskill-ripjaws-v-16-gb-2-x-8-gb-ddr4-3600-memory-f4-3600c18d-16gvk",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance LPX 64 GB",
+   "url": "https://pcpartpicker.com/product/k2mFf7/corsair-vengeance-lpx-64-gb-2-x-32-gb-ddr4-3200-memory-cmk64gx4m2e3200c16",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/vZrmP6/corsair-vengeance-rgb-pro-32gb-4-x-8gb-ddr4-3200-memory-cmw32gx4m4c3200c16w",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/ZZD7YJ/corsair-dominator-platinum-rgb-64-gb-2-x-32-gb-ddr5-5200-cl40-memory-cmt64gx5m2b5200c40",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR5-5200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Silicon Power XPOWER Turbine 16 GB",
+   "url": "https://pcpartpicker.com/product/zBTzK8/silicon-power-xpower-turbine-16-gb-2-x-8-gb-ddr4-3200-memory-sp016gxlzu320bda",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Silicon Power"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/GVKKHx/corsair-dominator-platinum-rgb-32-gb-2-x-16-gb-ddr5-6600-cl32-memory-cmt32gx5m2x6600c32",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-6600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance LPX 16 GB",
+   "url": "https://pcpartpicker.com/product/6cZzK8/corsair-vengeance-lpx-16-gb-2-x-8-gb-ddr4-3600-cl16-memory-cmk16gx4m2d3600c16",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Aegis 16 GB",
+   "url": "https://pcpartpicker.com/product/mcH8TW/gskill-aegis-16-gb-2-x-8-gb-ddr4-3200-memory-f4-3200c16d-16gis",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/27TzK8/corsair-vengeance-rgb-pro-32-gb-2-x-16-gb-ddr4-3200-memory-cmw32gx4m2e3200c16",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Vulcan Z 32 GB",
+   "url": "https://pcpartpicker.com/product/bcnypg/team-t-force-vulcan-z-32-gb-2-x-16-gb-ddr4-3200-cl16-memory-tlzgd432g3200hc16fdc01",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "Corsair Vengeance 32 GB",
+   "url": "https://pcpartpicker.com/product/YBWzK8/corsair-vengeance-32-gb-2-x-16-gb-ddr5-5200-cl40-memory-cmk32gx5m2b5200c40",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-5200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/ybrcCJ/gskill-tridentz-rgb-16gb-2-x-8gb-ddr4-3200-memory-f4-3200c16d-16gtzr",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Crucial Ballistix 16 GB",
+   "url": "https://pcpartpicker.com/product/BxTzK8/crucial-ballistix-16-gb-2-x-8-gb-ddr4-3200-memory-bl2k8g32c16u4b",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Crucial"
+  },
+  {
+   "name": "G.Skill Trident Z Royal 32 GB",
+   "url": "https://pcpartpicker.com/product/sNrmP6/gskill-trident-z-royal-32-gb-2-x-16-gb-ddr4-3600-memory-f4-3600c19d-32gtrs",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/P7RYcf/team-t-force-delta-rgb-32-gb-2-x-16-gb-ddr4-3600-cl18-memory-tf3d432g3600hc18jdc01",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "Corsair Vengeance RGB RT 32 GB",
+   "url": "https://pcpartpicker.com/product/cfVmP6/corsair-vengeance-rgb-rt-32-gb-2-x-16-gb-ddr4-3600-cl16-memory-cmn32gx4m2z3600c16",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Trident Z5 RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/RXGbt6/gskill-trident-z5-rgb-32-gb-2-x-16-gb-ddr5-6400-cl32-memory-f5-6400j3239g16gx2-tz5rk",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-6400",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/dHjJ7P/gskill-trident-z-rgb-32gb-2-x-16gb-ddr4-3200-memory-f4-3200c16d-32gtzrx",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 64 GB",
+   "url": "https://pcpartpicker.com/product/X7xbt6/corsair-vengeance-rgb-pro-64-gb-4-x-16-gb-ddr4-3600-cl18-memory-cmw64gx4m4d3600c18",
+   "memory_size": "4 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Kingston FURY Beast RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/D62WGX/kingston-fury-beast-rgb-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-kf432c16bbak216",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 16 GB",
+   "url": "https://pcpartpicker.com/product/zgpmP6/corsair-vengeance-rgb-pro-16-gb-2-x-8-gb-ddr4-3600-memory-cmw16gx4m2d3600c18w",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/7Wytt6/team-t-force-delta-rgb-16-gb-2-x-8-gb-ddr4-3600-cl18-memory-tf3d416g3600hc18jdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 128 GB",
+   "url": "https://pcpartpicker.com/product/cgGnTW/gskill-trident-z-rgb-128-gb-4-x-32-gb-ddr4-4000-cl18-memory-f4-4000c18q-128gtzr",
+   "memory_size": "4 x 32GB",
+   "memory_speed": "DDR4-4000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Kingston FURY Beast 32 GB",
+   "url": "https://pcpartpicker.com/product/HPYmP6/kingston-fury-beast-32-gb-2-x-16-gb-ddr5-4800-cl38-memory-kf548c38bbk2-32",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-4800",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "G.Skill Trident Z5 RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/DtFbt6/gskill-trident-z5-rgb-64-gb-2-x-32-gb-ddr5-6000-cl30-memory-f5-6000j3040g32gx2-tz5rk",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR5-6000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "ADATA XPG GAMMIX D20 16 GB",
+   "url": "https://pcpartpicker.com/product/D7LFf7/adata-xpg-gammix-d20-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-ax4u32008g16a-dcbk20",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "ADATA"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/HycG3C/corsair-vengeance-rgb-pro-32-gb-2-x-16-gb-ddr4-3200-cl16-memory-cmw32gx4m2e3200c16w",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/Zz3H99/teamgroup-t-force-delta-rgb-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-tf4d416g3200hc16cdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "Kingston FURY Beast 16 GB",
+   "url": "https://pcpartpicker.com/product/9fgFf7/kingston-fury-beast-16-gb-2-x-8-gb-ddr5-4800-cl38-memory-kf548c38bbk2-16",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR5-4800",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 16 GB",
+   "url": "https://pcpartpicker.com/product/2bJtt6/teamgroup-t-force-delta-rgb-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-tf3d416g3200hc16cdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "Corsair Vengeance 32 GB",
+   "url": "https://pcpartpicker.com/product/CMrRsY/corsair-vengeance-32-gb-2-x-16-gb-ddr5-4800-cl40-memory-cmk32gx5m2a4800c40",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-4800",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance LPX 8 GB",
+   "url": "https://pcpartpicker.com/product/sMbkcf/corsair-memory-cmk8gx4m1a2400c16",
+   "memory_size": "1 x 8GB",
+   "memory_speed": "DDR4-2400",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Ripjaws V 64 GB",
+   "url": "https://pcpartpicker.com/product/kmBhP6/gskill-ripjaws-v-64-gb-2-x-32-gb-ddr4-3600-memory-f4-3600c18d-64gvk",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Ripjaws V 32 GB",
+   "url": "https://pcpartpicker.com/product/dqbTwP/gskill-ripjaws-v-32-gb-2-x-16-gb-ddr4-4000-cl18-memory-f4-4000c18d-32gvk",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-4000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/LGD7YJ/gskill-trident-z-rgb-32-gb-2-x-16-gb-ddr4-4400-cl19-memory-f4-4400c19d-32gtzr",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-4400",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Kingston FURY Beast 32 GB",
+   "url": "https://pcpartpicker.com/product/p7Z9TW/kingston-fury-beast-32-gb-2-x-16-gb-ddr5-5200-cl40-memory-kf552c40bbk2-32",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-5200",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/XXQcCJ/corsair-dominator-platinum-rgb-64-gb-2-x-32-gb-ddr5-5600-cl40-memory-cmt64gx5m2x5600c40",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR5-5600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance LPX 32 GB",
+   "url": "https://pcpartpicker.com/product/mtXnTW/corsair-vengeance-lpx-32-gb-4-x-8-gb-ddr4-3600-memory-cmk32gx4m4d3600c18",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Patriot Viper Steel 16 GB",
+   "url": "https://pcpartpicker.com/product/mCHRsY/patriot-viper-steel-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-pvs416g320c6k",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Patriot"
+  },
+  {
+   "name": "G.Skill Ripjaws V 32 GB",
+   "url": "https://pcpartpicker.com/product/nvjNnQ/gskill-ripjaws-v-32-gb-2-x-16-gb-ddr4-3600-memory-f4-3600c18d-32gvk",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z Neo 16 GB",
+   "url": "https://pcpartpicker.com/product/JgLwrH/gskill-trident-z-neo-16-gb-2-x-8-gb-ddr4-3600-cl16-memory-f4-3600c16d-16gtznc",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance LPX 32 GB",
+   "url": "https://pcpartpicker.com/product/9392FT/corsair-vengeance-lpx-32-gb-2-x-16-gb-ddr4-3600-cl16-memory-cmk32gx4m2d3600c16",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance 64 GB",
+   "url": "https://pcpartpicker.com/product/TJZ9TW/corsair-vengeance-64-gb-2-x-32-gb-ddr5-5200-cl40-memory-cmk64gx5m2b5200c40",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR5-5200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Crucial Ballistix 32 GB",
+   "url": "https://pcpartpicker.com/product/gCCFf7/crucial-ballistix-32-gb-2-x-16-gb-ddr4-3200-memory-bl2k16g32c16u4b",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Crucial"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/fBLwrH/gskill-trident-z-rgb-32-gb-2-x-16-gb-ddr4-3600-memory-f4-3600c18d-32gtzr",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Kingston HyperX Fury 16 GB",
+   "url": "https://pcpartpicker.com/product/QBrYcf/kingston-hyperx-fury-16-gb-2-x-8-gb-ddr4-3200-memory-hx432c16fb3k216",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/kChmP6/corsair-dominator-platinum-rgb-32-gb-4-x-8-gb-ddr4-3600-cl18-memory-cmt32gx4m4c3600c18w",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 32 GB",
+   "url": "https://pcpartpicker.com/product/PfrYcf/corsair-vengeance-rgb-pro-32-gb-4-x-8-gb-ddr4-3600-memory-cmw32gx4m4d3600c18",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Corsair Vengeance LPX 16 GB",
+   "url": "https://pcpartpicker.com/product/jjZ2FT/corsair-vengeance-lpx-16gb-2-x-8gb-ddr4-3200-memory-cmk16gx4m2b3200c16w",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill Trident Z Neo 64 GB",
+   "url": "https://pcpartpicker.com/product/hFdrxr/gskill-trident-z-neo-64-gb-4-x-16-gb-ddr4-3600-cl16-memory-f4-3600c16q-64gtznc",
+   "memory_size": "4 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance 16 GB",
+   "url": "https://pcpartpicker.com/product/qdkD4D/corsair-memory-cmz16gx3m2a1600c10",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR3-1600",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "Kingston ValueRAM 1 GB",
+   "url": "https://pcpartpicker.com/product/j4W9TW/kingston-memory-kvr667d21gr",
+   "memory_size": "1 x 1GB",
+   "memory_speed": "DDR2-667",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/Zy3gXL/corsair-dominator-platinum-rgb-32-gb-2-x-16-gb-ddr5-5200-cl40-memory-cmt32gx5m2b5200c40",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-5200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "OLOy MD4U083216BJDA 16 GB",
+   "url": "https://pcpartpicker.com/product/fByqqs/oloy-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-md4u083216bjda",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "OLOy"
+  },
+  {
+   "name": "Patriot Viper Steel 8 GB",
+   "url": "https://pcpartpicker.com/product/Mnwkcf/patriot-viper-steel-8-gb-2-x-4-gb-ddr4-3200-cl16-memory-pvs48g320c6k",
+   "memory_size": "2 x 4GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Patriot"
+  },
+  {
+   "name": "TEAMGROUP T-Force Dark Za 16 GB",
+   "url": "https://pcpartpicker.com/product/2Byqqs/team-t-force-dark-za-16-gb-2-x-8-gb-ddr4-3600-memory-tdzad416g3600hc18jdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "TEAMGROUP T-Create Classic 16 GB",
+   "url": "https://pcpartpicker.com/product/ckJgXL/team-t-create-classic-16-gb-2-x-8-gb-ddr4-3200-cl22-memory-ttccd416g3200hc22dc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "G.Skill Trident Z5 RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/x77G3C/gskill-trident-z5-rgb-64-gb-2-x-32-gb-ddr5-6000-cl30-memory-f5-6000j3040g32gx2-tz5rs",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR5-6000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Kingston Server Premier 64 GB",
+   "url": "https://pcpartpicker.com/product/kRmmP6/kingston-server-premier-64-gb-1-x-64-gb-registered-ddr4-3200-cl22-memory-ksm32rd464har",
+   "memory_size": "1 x 64GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Kingston"
+  },
+  {
+   "name": "Silicon Power XPOWER Turbine 32 GB",
+   "url": "https://pcpartpicker.com/product/w98bt6/silicon-power-xpower-turbine-32-gb-2-x-16-gb-ddr4-3200-cl16-memory-sp032gxlzu320bda",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Silicon Power"
+  },
+  {
+   "name": "G.Skill Aegis 16 GB",
+   "url": "https://pcpartpicker.com/product/FNprxr/gskill-aegis-16gb-2-x-8gb-ddr4-3000-memory-f43000c16d16gisb",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3000",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "Corsair Vengeance RGB Pro 64 GB",
+   "url": "https://pcpartpicker.com/product/KvZzK8/corsair-vengeance-rgb-pro-64-gb-2-x-32-gb-ddr4-3200-memory-cmw64gx4m2e3200c16",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "TEAMGROUP T-Force Delta RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/ZRpmP6/team-t-force-delta-rgb-32-gb-2-x-16-gb-ddr4-3600-cl18-memory-tf4d432g3600hc18jdc01",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3600",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "OLOy ND4U1632161DJ0DA 32 GB",
+   "url": "https://pcpartpicker.com/product/CWCFf7/oloy-32-gb-2-x-16-gb-ddr4-3200-cl16-memory-nd4u1632161dj0da",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "OLOy"
+  },
+  {
+   "name": "ADATA XPG SPECTRIX D60G 16 GB",
+   "url": "https://pcpartpicker.com/product/Hsxbt6/adata-xpg-spectrix-d60g-16-gb-2-x-8-gb-ddr4-3200-memory-ax4u320038g16a-dt60",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "ADATA"
+  },
+  {
+   "name": "TEAMGROUP T-Force Vulcan Z 16 GB",
+   "url": "https://pcpartpicker.com/product/2Bnypg/team-t-force-vulcan-z-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-tlzgd416g3200hc16fdc01",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "TEAMGROUP"
+  },
+  {
+   "name": "Silicon Power XPOWER Gaming 16 GB",
+   "url": "https://pcpartpicker.com/product/hPfnTW/silicon-power-xpower-gaming-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-sp016gxlzu320bdc",
+   "memory_size": "2 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "Silicon Power"
+  },
+  {
+   "name": "Corsair Dominator Platinum RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/qBBG3C/corsair-dominator-platinum-rgb-32-gb-2-x-16-gb-ddr5-6200-cl36-memory-cmt32gx5m2x6200c36w",
+   "memory_size": "2 x 16GB",
+   "memory_speed": "DDR5-6200",
+   "manufacturer": "Corsair"
+  },
+  {
+   "name": "G.Skill TridentZ RGB 64 GB",
+   "url": "https://pcpartpicker.com/product/nJt9TW/gskill-tridentz-rgb-64-gb-2-x-32-gb-ddr4-4600-cl20-memory-f4-4600c20d-64gtzr",
+   "memory_size": "2 x 32GB",
+   "memory_speed": "DDR4-4600",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "G.Skill Trident Z RGB 32 GB",
+   "url": "https://pcpartpicker.com/product/KJ2rxr/gskill-tridentz-rgb-32gb-4-x-8gb-ddr4-3200-memory-f4-3200c16q-32gtzr",
+   "memory_size": "4 x 8GB",
+   "memory_speed": "DDR4-3200",
+   "manufacturer": "G.Skill"
+  },
+  {
+   "name": "TEAMGROUP TED48G2400C1601 8 GB",
+   "url": "https://pcpartpicker.com/product/zHBTwP/team-8gb-1-x-8gb-ddr4-2400-memory-ted48g2400c1601",
+   "memory_size": "1 x 8GB",
+   "memory_speed": "DDR4-2400",
+   "manufacturer": "TEAMGROUP"
+  }
+ ]
+}

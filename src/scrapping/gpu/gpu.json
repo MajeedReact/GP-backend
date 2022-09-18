@@ -1,0 +1,904 @@
+{
+ "gpu_name": [
+  {
+   "name": "EVGA XC GAMING",
+   "url": "https://pcpartpicker.com/product/LpbTwP/evga-geforce-rtx-3060-12-gb-xc-gaming-video-card-12g-p5-3657-kr",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1882 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI MECH 2X",
+   "url": "https://pcpartpicker.com/product/M9ytt6/msi-radeon-rx-6600-8-gb-mech-2x-video-card-rx-6600-mech-2x-8g",
+   "chipset": "Radeon RX 6600",
+   "memory": "8 GB",
+   "core_clock": "1626 MHz",
+   "boost_clock": "2491 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/M2rRsY/evga-geforce-rtx-3070-ti-8-gb-ftw3-ultra-gaming-video-card-08g-p5-3797-kl",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1860 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI VENTUS 2X",
+   "url": "https://pcpartpicker.com/product/pD8bt6/msi-geforce-rtx-3060-12-gb-ventus-2x-video-card-rtx3060ventus2x12goc",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1777 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/HdPQzy/evga-geforce-rtx-3090-ti-24-gb-ftw3-ultra-gaming-video-card-24g-p5-4985-kr",
+   "chipset": "GeForce RTX 3090 Ti",
+   "memory": "24 GB",
+   "core_clock": "1560 MHz",
+   "boost_clock": "1920 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING LHR",
+   "url": "https://pcpartpicker.com/product/zsmmP6/evga-geforce-rtx-3080-lhr-10-gb-ftw3-ultra-gaming-lhr-video-card-10g-p5-3897-kl",
+   "chipset": "GeForce RTX 3080 10GB LHR",
+   "memory": "10 GB",
+   "core_clock": "1440 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "Asus TUF GAMING OC",
+   "url": "https://pcpartpicker.com/product/CqPQzy/asus-geforce-rtx-3070-ti-8-gb-tuf-gaming-oc-video-card-tuf-rtx3070ti-o8g-gaming",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "MSI VENTUS XS OC",
+   "url": "https://pcpartpicker.com/product/Z3wkcf/msi-geforce-gtx-1660-super-6-gb-ventus-xs-oc-video-card-gtx-1660-super-ventus-xs-oc",
+   "chipset": "GeForce GTX 1660 SUPER",
+   "memory": "6 GB",
+   "core_clock": "1530 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING LE iCX3",
+   "url": "https://pcpartpicker.com/product/FFPQzy/evga-geforce-rtx-3080-ti-12-gb-ftw3-ultra-gaming-le-icx3-video-card-12g-p5-3967-kr",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI MECH 2X OC",
+   "url": "https://pcpartpicker.com/product/QRwypg/msi-radeon-rx-6600-xt-8-gb-mech-2x-oc-video-card-rx6600xt-mech2x-8goc",
+   "chipset": "Radeon RX 6600 XT",
+   "memory": "8 GB",
+   "core_clock": "1968 MHz",
+   "boost_clock": "2602 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/PG848d/evga-geforce-rtx-3090-24-gb-ftw3-ultra-gaming-video-card-24g-p5-3987-kr",
+   "chipset": "GeForce RTX 3090",
+   "memory": "24 GB",
+   "core_clock": "1395 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI VENTUS 2X OCV1",
+   "url": "https://pcpartpicker.com/product/L9BG3C/msi-geforce-rtx-3060-ti-lhr-8-gb-ventus-2x-ocv1-video-card-geforce-rtx-3060-ti-ventus-2x-8g-ocv1-lhr",
+   "chipset": "GeForce RTX 3060 Ti LHR",
+   "memory": "8 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1695 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI VENTUS 3X OC",
+   "url": "https://pcpartpicker.com/product/tkTp99/msi-geforce-rtx-3060-12-gb-ventus-3x-oc-video-card-rtx3060ventus3x12goc",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1807 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI VENTUS 3X PLUS OC",
+   "url": "https://pcpartpicker.com/product/ggNxFT/msi-geforce-rtx-3080-12gb-lhr-12-gb-ventus-3x-plus-oc-video-card-geforce-rtx-3080-ventus-3x-plus-12g-oc-lhr",
+   "chipset": "GeForce RTX 3080 12GB LHR",
+   "memory": "12 GB",
+   "core_clock": "1260 MHz",
+   "boost_clock": "1740 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/wvgQzy/nvidia-geforce-rtx-3060-ti-8-gb-founders-edition-video-card-900-1g142-2520-000",
+   "chipset": "GeForce RTX 3060 Ti",
+   "memory": "8 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1670 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "EVGA XC GAMING",
+   "url": "https://pcpartpicker.com/product/HDFbt6/evga-geforce-rtx-3050-8gb-8-gb-xc-gaming-video-card-08g-p5-3553-kr",
+   "chipset": "GeForce RTX 3050 8GB",
+   "memory": "8 GB",
+   "core_clock": "1550 MHz",
+   "boost_clock": "1845 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "Gigabyte Vision OC",
+   "url": "https://pcpartpicker.com/product/JHBG3C/gigabyte-geforce-rtx-3060-ti-8-gb-vision-oc-video-card-gv-n306tvision-oc-8gd",
+   "chipset": "GeForce RTX 3060 Ti",
+   "memory": "8 GB",
+   "core_clock": "1665 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI VENTUS 2X OC",
+   "url": "https://pcpartpicker.com/product/s4H8TW/msi-geforce-rtx-3070-8-gb-ventus-2x-oc-video-card-rtx-3070-ventus-2x-oc",
+   "chipset": "GeForce RTX 3070",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA KO ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/2H7p99/evga-geforce-rtx-2060-6-gb-ko-ultra-gaming-video-card-06g-p4-2068-kr",
+   "chipset": "GeForce RTX 2060",
+   "memory": "6 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "PNY VCQGV100-PB",
+   "url": "https://pcpartpicker.com/product/D7GxFT/pny-quadro-gv100-32gb-video-card-vcqgv100-pb",
+   "chipset": "Quadro GV100",
+   "memory": "32 GB",
+   "core_clock": "1200 MHz",
+   "boost_clock": "1447 MHz",
+   "manufacturer": "PNY"
+  },
+  {
+   "name": "XFX Speedster SWFT 210",
+   "url": "https://pcpartpicker.com/product/wdvdnQ/xfx-radeon-rx-6600-8-gb-speedster-swft-210-video-card-rx-66xl8lfdq",
+   "chipset": "Radeon RX 6600",
+   "memory": "8 GB",
+   "core_clock": "1626 MHz",
+   "boost_clock": "2491 MHz",
+   "manufacturer": "XFX"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/PjGbt6/gigabyte-geforce-rtx-3080-ti-12-gb-gaming-oc-video-card-gv-n308tgaming-oc-12gd",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1770 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "Asus STRIX GAMING OC",
+   "url": "https://pcpartpicker.com/product/fzVG3C/asus-geforce-rtx-3090-24-gb-strix-gaming-oc-video-card-rog-strix-rtx3090-o24g-gaming",
+   "chipset": "GeForce RTX 3090",
+   "memory": "24 GB",
+   "core_clock": "1395 MHz",
+   "boost_clock": "1890 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/wNpzK8/gigabyte-geforce-rtx-3070-ti-8-gb-gaming-oc-video-card-gv-n307tgaming-oc-8gd",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1830 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI GAMING X",
+   "url": "https://pcpartpicker.com/product/wD8bt6/msi-geforce-rtx-3060-12-gb-gaming-x-video-card-rtx-3060-gaming-x12g",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1837 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/C7bTwP/nvidia-geforce-rtx-3090-ti-24-gb-founders-edition-video-card-9001g1362505000",
+   "chipset": "GeForce RTX 3090 Ti",
+   "memory": "24 GB",
+   "core_clock": "1560 MHz",
+   "boost_clock": "1860 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "EVGA SC ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/GzPgXL/evga-geforce-gtx-1660-super-6-gb-sc-ultra-gaming-video-card-06g-p4-1068-kr",
+   "chipset": "GeForce GTX 1660 SUPER",
+   "memory": "6 GB",
+   "core_clock": "1530 MHz",
+   "boost_clock": "1830 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "EVGA SC ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/LBrYcf/evga-geforce-gtx-1650-super-4-gb-sc-ultra-gaming-video-card-04g-p4-1357-kr",
+   "chipset": "GeForce GTX 1650 SUPER",
+   "memory": "4 GB",
+   "core_clock": "1530 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI GAMING X TRIO",
+   "url": "https://pcpartpicker.com/product/DDwypg/msi-geforce-rtx-3080-ti-12-gb-gaming-x-trio-video-card-geforce-rtx-3080-ti-gaming-x-trio-12g",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1770 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Asus DUAL EVO OC",
+   "url": "https://pcpartpicker.com/product/fYNgXL/asus-geforce-rtx-2060-6-gb-dual-evo-oc-video-card-dual-rtx2060-o6g-evo",
+   "chipset": "GeForce RTX 2060",
+   "memory": "6 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1785 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "MSI GTX 1050 Ti 4GT OC",
+   "url": "https://pcpartpicker.com/product/x7s8TW/msi-geforce-gtx-1050-ti-4gb-video-card-gtx-1050-ti-4gt-oc",
+   "chipset": "GeForce GTX 1050 Ti",
+   "memory": "4 GB",
+   "core_clock": "1341 MHz",
+   "boost_clock": "1455 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI GAMING Z TRIO",
+   "url": "https://pcpartpicker.com/product/qQM48d/msi-geforce-rtx-3070-lhr-8-gb-gaming-z-trio-video-card-geforce-rtx-3070-gaming-z-trio-8g-lhr",
+   "chipset": "GeForce RTX 3070 LHR",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1845 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/m8pmP6/nvidia-geforce-rtx-3070-8-gb-founders-edition-video-card-9001g1422510000",
+   "chipset": "GeForce RTX 3070",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1730 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "MSI SUPRIM X",
+   "url": "https://pcpartpicker.com/product/G7Fbt6/msi-geforce-rtx-3090-ti-24-gb-suprim-x-video-card-rtx-3090-ti-suprim-x-24g",
+   "chipset": "GeForce RTX 3090 Ti",
+   "memory": "24 GB",
+   "core_clock": "1560 MHz",
+   "boost_clock": "1965 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/dKrYcf/evga-geforce-rtx-3080-10-gb-ftw3-ultra-gaming-video-card-10g-p5-3897-kr",
+   "chipset": "GeForce RTX 3080 10GB",
+   "memory": "10 GB",
+   "core_clock": "1440 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI MECH 2X",
+   "url": "https://pcpartpicker.com/product/7whFf7/msi-radeon-rx-6700-xt-12-gb-mech-2x-video-card-radeon-rx-6700-xt-mech-2x-12g",
+   "chipset": "Radeon RX 6700 XT",
+   "memory": "12 GB",
+   "core_clock": "2321 MHz",
+   "boost_clock": "",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA SC GAMING",
+   "url": "https://pcpartpicker.com/product/9F7v6h/evga-geforce-rtx-2060-6-gb-sc-gaming-video-card-06g-p4-2062-kr",
+   "chipset": "GeForce RTX 2060",
+   "memory": "6 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1710 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "Gigabyte Vision OC",
+   "url": "https://pcpartpicker.com/product/MR4Ycf/gigabyte-geforce-rtx-3070-ti-8-gb-vision-oc-video-card-gv-n307tvision-oc-8gd",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1830 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/RnDkcf/nvidia-geforce-rtx-3080-10-gb-founders-edition-video-card-9001g1332530000",
+   "chipset": "GeForce RTX 3080 10GB",
+   "memory": "10 GB",
+   "core_clock": "1440 MHz",
+   "boost_clock": "1710 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "Asus STRIX LC GAMING OC",
+   "url": "https://pcpartpicker.com/product/Z6gFf7/asus-geforce-rtx-3090-ti-24-gb-strix-lc-gaming-oc-video-card-rog-strix-lc-rtx3090ti-o24g-gaming",
+   "chipset": "GeForce RTX 3090 Ti",
+   "memory": "24 GB",
+   "core_clock": "1560 MHz",
+   "boost_clock": "1980 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/YfvdnQ/gigabyte-radeon-rx-6900-xt-16-gb-gaming-oc-video-card-gv-r69xtgamingoc16gd",
+   "chipset": "Radeon RX 6900 XT",
+   "memory": "16 GB",
+   "core_clock": "1825 MHz",
+   "boost_clock": "2285 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "PowerColor Red Devil",
+   "url": "https://pcpartpicker.com/product/2kJgXL/powercolor-radeon-rx-6700-xt-12-gb-red-devil-video-card-axrx-6700xt-12gbd6-3dheoc",
+   "chipset": "Radeon RX 6700 XT",
+   "memory": "12 GB",
+   "core_clock": "2321 MHz",
+   "boost_clock": "2622 MHz",
+   "manufacturer": "PowerColor"
+  },
+  {
+   "name": "Asus ROG STRIX GAMING OC",
+   "url": "https://pcpartpicker.com/product/HfpzK8/asus-geforce-rtx-3080-ti-12-gb-rog-strix-gaming-oc-video-card-rog-strix-rtx3080ti-o12g-gaming",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1845 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Asus ROG STRIX WHITE OC",
+   "url": "https://pcpartpicker.com/product/G32WGX/asus-geforce-rtx-3090-24-gb-rog-strix-white-oc-video-card-rog-strix-rtx3090-o24g-white",
+   "chipset": "GeForce RTX 3090",
+   "memory": "24 GB",
+   "core_clock": "1395 MHz",
+   "boost_clock": "1890 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "MSI VENTUS GP OC",
+   "url": "https://pcpartpicker.com/product/3ZrRsY/msi-geforce-rtx-2060-6-gb-ventus-gp-oc-video-card-rtx-2060-ventus-gpoc",
+   "chipset": "GeForce RTX 2060",
+   "memory": "6 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1710 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI GAMING X TRIO",
+   "url": "https://pcpartpicker.com/product/JjGbt6/msi-geforce-rtx-3070-ti-8-gb-gaming-x-trio-video-card-geforce-rtx-3070-ti-gaming-x-trio-8g",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1830 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Gigabyte EAGLE OC Rev 2.0",
+   "url": "https://pcpartpicker.com/product/CjM48d/gigabyte-geforce-rtx-3060-12-gb-eagle-oc-rev-20-video-card-gv-n3060eagle-oc-12gd-rev-20",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1807 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI MECH 2X OC",
+   "url": "https://pcpartpicker.com/product/Xh8bt6/msi-radeon-rx-6500-xt-4-gb-mech-2x-oc-video-card-radeon-rx-6500-xt-mech-2x-4g-oc",
+   "chipset": "Radeon RX 6500 XT",
+   "memory": "4 GB",
+   "core_clock": "2310 MHz",
+   "boost_clock": "2825 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Asus TUF GAMING OC",
+   "url": "https://pcpartpicker.com/product/qnFbt6/asus-geforce-rtx-3080-12gb-lhr-12-gb-tuf-gaming-oc-video-card-tuf-rtx3080-o12g-gaming",
+   "chipset": "GeForce RTX 3080 12GB LHR",
+   "memory": "12 GB",
+   "core_clock": "1260 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Gigabyte EAGLE",
+   "url": "https://pcpartpicker.com/product/HWbTwP/gigabyte-radeon-rx-6700-xt-12-gb-eagle-video-card-gv-r67xteagle-12gd",
+   "chipset": "Radeon RX 6700 XT",
+   "memory": "12 GB",
+   "core_clock": "2321 MHz",
+   "boost_clock": "",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI GAMING Z TRIO",
+   "url": "https://pcpartpicker.com/product/qFytt6/msi-geforce-rtx-3080-12gb-lhr-12-gb-gaming-z-trio-video-card-geforce-rtx-3080-gaming-z-trio-12g-lhr",
+   "chipset": "GeForce RTX 3080 12GB LHR",
+   "memory": "12 GB",
+   "core_clock": "1260 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI VENTUS 3X OC",
+   "url": "https://pcpartpicker.com/product/XTmmP6/msi-geforce-rtx-3070-ti-8-gb-ventus-3x-oc-video-card-geforce-rtx-3070-ti-ventus-3x-8g-oc",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA XC3 ULTRA GAMING iCX3",
+   "url": "https://pcpartpicker.com/product/QFPQzy/evga-geforce-rtx-3080-ti-12-gb-xc3-ultra-gaming-icx3-video-card-12g-p5-3955-kr",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1725 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "PowerColor Fighter",
+   "url": "https://pcpartpicker.com/product/nyH7YJ/powercolor-radeon-rx-6600-xt-8-gb-fighter-video-card-6600xt-8gbd6-3dh",
+   "chipset": "Radeon RX 6600 XT",
+   "memory": "8 GB",
+   "core_clock": "1968 MHz",
+   "boost_clock": "2589 MHz",
+   "manufacturer": "PowerColor"
+  },
+  {
+   "name": "Asus TUF GAMING OC",
+   "url": "https://pcpartpicker.com/product/7CrRsY/asus-geforce-rtx-3080-ti-12-gb-tuf-gaming-oc-video-card-tuf-rtx3080ti-o12g-gaming",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1695 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Gigabyte VISION OC Rev 2.0",
+   "url": "https://pcpartpicker.com/product/8ZH7YJ/gigabyte-geforce-rtx-3070-lhr-8-gb-vision-oc-rev-20-video-card-gv-n3070vision-oc-8gd-rev-20",
+   "chipset": "GeForce RTX 3070 LHR",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "ASRock Challenger D",
+   "url": "https://pcpartpicker.com/product/8HBG3C/asrock-radeon-rx-6700-xt-12-gb-challenger-d-video-card-rx6700xt-cld-12g",
+   "chipset": "Radeon RX 6700 XT",
+   "memory": "12 GB",
+   "core_clock": "2321 MHz",
+   "boost_clock": "2581 MHz",
+   "manufacturer": "ASRock"
+  },
+  {
+   "name": "Gigabyte GAMING OC Rev 2.0",
+   "url": "https://pcpartpicker.com/product/mLYmP6/gigabyte-geforce-rtx-3070-lhr-8-gb-gaming-oc-rev-20-video-card-gv-n3070gaming-oc-8gd-rev-20",
+   "chipset": "GeForce RTX 3070 LHR",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "Asus ROG STRIX GAMING OC",
+   "url": "https://pcpartpicker.com/product/XmLFf7/asus-geforce-rtx-3070-ti-8-gb-rog-strix-gaming-oc-video-card-rog-strix-rtx3070ti-o8g-gaming",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "EVGA XC3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/m2yqqs/evga-geforce-rtx-3080-10-gb-xc3-ultra-gaming-video-card-10g-p5-3885-kr",
+   "chipset": "GeForce RTX 3080 10GB",
+   "memory": "10 GB",
+   "core_clock": "1440 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "ASRock Phantom Gaming D OC",
+   "url": "https://pcpartpicker.com/product/CLWBD3/asrock-radeon-rx-6900-xt-16-gb-phantom-gaming-d-oc-video-card-rx6900xt-pgd-16go",
+   "chipset": "Radeon RX 6900 XT",
+   "memory": "16 GB",
+   "core_clock": "1925 MHz",
+   "boost_clock": "2340 MHz",
+   "manufacturer": "ASRock"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/Lg848d/gigabyte-radeon-rx-6800-xt-16-gb-gaming-oc-video-card-gv-r68xtgamingoc16gd",
+   "chipset": "Radeon RX 6800 XT",
+   "memory": "16 GB",
+   "core_clock": "1825 MHz",
+   "boost_clock": "2285 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "Zotac GAMING Twin Edge OC",
+   "url": "https://pcpartpicker.com/product/7BJgXL/zotac-geforce-rtx-3050-8gb-8-gb-gaming-twin-edge-oc-video-card-zt-a30500h-10m",
+   "chipset": "GeForce RTX 3050 8GB",
+   "memory": "8 GB",
+   "core_clock": "1550 MHz",
+   "boost_clock": "1807 MHz",
+   "manufacturer": "Zotac"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/QNvdnQ/nvidia-geforce-rtx-3070-ti-8-gb-founders-edition-video-card-900-1g143-2515-000",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1770 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "MSI VENTUS 3X OC",
+   "url": "https://pcpartpicker.com/product/cW92FT/msi-geforce-rtx-3080-ti-12-gb-ventus-3x-oc-video-card-geforce-rtx-3080-ti-ventus-3x-12g-oc",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1695 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/KgH7YJ/gigabyte-geforce-rtx-3050-8gb-8-gb-gaming-oc-video-card-gv-n3050gaming-oc-8gd",
+   "chipset": "GeForce RTX 3050 8GB",
+   "memory": "8 GB",
+   "core_clock": "1550 MHz",
+   "boost_clock": "",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "PowerColor Fighter",
+   "url": "https://pcpartpicker.com/product/fQhFf7/powercolor-radeon-rx-6600-8-gb-fighter-video-card-axrx-6600-8gbd6-3dh",
+   "chipset": "Radeon RX 6600",
+   "memory": "8 GB",
+   "core_clock": "1626 MHz",
+   "boost_clock": "2491 MHz",
+   "manufacturer": "PowerColor"
+  },
+  {
+   "name": "Gigabyte GAMING OC",
+   "url": "https://pcpartpicker.com/product/2C7p99/gigabyte-geforce-rtx-3070-8-gb-gaming-oc-video-card-gv-n3070gaming-oc8gd",
+   "chipset": "GeForce RTX 3070",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "Gigabyte Vision OC",
+   "url": "https://pcpartpicker.com/product/dsKKHx/gigabyte-geforce-rtx-3080-ti-12-gb-vision-oc-video-card-gv-n308tvision-oc-12gd",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1770 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI SUPRIM X",
+   "url": "https://pcpartpicker.com/product/MBvdnQ/msi-geforce-rtx-3080-ti-12-gb-suprim-x-video-card-geforce-rtx-3080-ti-suprim-x-12g",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1845 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "MSI GAMING X TRIO",
+   "url": "https://pcpartpicker.com/product/yPpmP6/msi-geforce-rtx-3090-24-gb-gaming-x-trio-video-card-rtx-3090-gaming-x-trio-24g",
+   "chipset": "GeForce RTX 3090",
+   "memory": "24 GB",
+   "core_clock": "1395 MHz",
+   "boost_clock": "",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA XC BLACK GAMING",
+   "url": "https://pcpartpicker.com/product/NsJgXL/evga-geforce-rtx-3060-12-gb-xc-black-gaming-video-card-12g-p5-3655-kr",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1777 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "EVGA XC3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/GtWzK8/evga-geforce-rtx-3070-ti-8-gb-xc3-ultra-gaming-video-card-08g-p5-3785-kl",
+   "chipset": "GeForce RTX 3070 Ti",
+   "memory": "8 GB",
+   "core_clock": "1575 MHz",
+   "boost_clock": "1815 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI GAMING X TRIO",
+   "url": "https://pcpartpicker.com/product/LhLFf7/msi-geforce-rtx-3090-ti-24-gb-gaming-x-trio-video-card-rtx-3090-ti-gaming-x-trio-24g",
+   "chipset": "GeForce RTX 3090 Ti",
+   "memory": "24 GB",
+   "core_clock": "1560 MHz",
+   "boost_clock": "1920 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Gigabyte OC",
+   "url": "https://pcpartpicker.com/product/YrZFf7/gigabyte-geforce-gtx-1660-ti-6-gb-oc-video-card-gv-n166toc-6gd",
+   "chipset": "GeForce GTX 1660 Ti",
+   "memory": "6 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "Gigabyte GAMING OC Rev 2.0",
+   "url": "https://pcpartpicker.com/product/GzgFf7/gigabyte-geforce-rtx-3060-12-gb-gaming-oc-rev-20-video-card-gv-n3060gaming-oc-12gd-rev-20",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1837 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "MSI D6 VENTUS XS OC",
+   "url": "https://pcpartpicker.com/product/BW6qqs/msi-geforce-gtx-1650-g6-4-gb-d6-ventus-xs-oc-video-card-gtx-1650-d6-ventus-xs-oc",
+   "chipset": "GeForce GTX 1650 G6",
+   "memory": "4 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1620 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Zotac GAMING Twin Edge OC",
+   "url": "https://pcpartpicker.com/product/9m3gXL/zotac-geforce-rtx-3060-ti-lhr-8-gb-gaming-twin-edge-oc-video-card-zt-a30610h-10mlhr",
+   "chipset": "GeForce RTX 3060 Ti LHR",
+   "memory": "8 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1695 MHz",
+   "manufacturer": "Zotac"
+  },
+  {
+   "name": "XFX Speedster QICK 210",
+   "url": "https://pcpartpicker.com/product/ykstt6/xfx-radeon-rx-6500-xt-4-gb-speedster-qick-210-video-card-rx-65xt4dbdq",
+   "chipset": "Radeon RX 6500 XT",
+   "memory": "4 GB",
+   "core_clock": "2310 MHz",
+   "boost_clock": "2825 MHz",
+   "manufacturer": "XFX"
+  },
+  {
+   "name": "ASRock Challenger D OC",
+   "url": "https://pcpartpicker.com/product/DgFbt6/asrock-radeon-rx-6600-xt-8-gb-challenger-d-oc-video-card-rx6600xt-cld-8go",
+   "chipset": "Radeon RX 6600 XT",
+   "memory": "8 GB",
+   "core_clock": "1968 MHz",
+   "boost_clock": "",
+   "manufacturer": "ASRock"
+  },
+  {
+   "name": "Sapphire PULSE",
+   "url": "https://pcpartpicker.com/product/gJTp99/sapphire-radeon-rx-6600-8-gb-pulse-video-card-11310-01-20g",
+   "chipset": "Radeon RX 6600",
+   "memory": "8 GB",
+   "core_clock": "1626 MHz",
+   "boost_clock": "2491 MHz",
+   "manufacturer": "Sapphire"
+  },
+  {
+   "name": "Zotac GAMING Twin Edge OC",
+   "url": "https://pcpartpicker.com/product/sM8bt6/zotac-geforce-rtx-3060-12-gb-gaming-twin-edge-oc-video-card-zt-a30600h-10m",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "1807 MHz",
+   "manufacturer": "Zotac"
+  },
+  {
+   "name": "EVGA FTW3 ULTRA GAMING",
+   "url": "https://pcpartpicker.com/product/wQNxFT/evga-geforce-rtx-3080-12gb-lhr-12-gb-ftw3-ultra-gaming-video-card-12g-p5-4877-kl",
+   "chipset": "GeForce RTX 3080 12GB LHR",
+   "memory": "12 GB",
+   "core_clock": "1260 MHz",
+   "boost_clock": "1800 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "Gigabyte EAGLE OC",
+   "url": "https://pcpartpicker.com/product/gmvdnQ/gigabyte-geforce-rtx-3050-8gb-8-gb-eagle-oc-video-card-gv-n3050eagle-oc-8gd",
+   "chipset": "GeForce RTX 3050 8GB",
+   "memory": "8 GB",
+   "core_clock": "1550 MHz",
+   "boost_clock": "1792 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "EVGA XC GAMING",
+   "url": "https://pcpartpicker.com/product/Xj92FT/evga-geforce-rtx-2060-12-gb-xc-gaming-video-card-12g-p4-2263-kr",
+   "chipset": "GeForce RTX 2060",
+   "memory": "12 GB",
+   "core_clock": "1365 MHz",
+   "boost_clock": "1680 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "MSI VENTUS GP OC",
+   "url": "https://pcpartpicker.com/product/pL4BD3/msi-geforce-rtx-2060-super-8-gb-ventus-gp-oc-video-card-rtx-2060-super-ventus-gp-oc",
+   "chipset": "GeForce RTX 2060 SUPER",
+   "memory": "8 GB",
+   "core_clock": "1470 MHz",
+   "boost_clock": "1665 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "EVGA XC3 ULTRA GAMING iCX3",
+   "url": "https://pcpartpicker.com/product/jKcG3C/evga-geforce-rtx-3070-lhr-8-gb-xc3-ultra-gaming-icx3-video-card-08g-p5-3755-kl",
+   "chipset": "GeForce RTX 3070 LHR",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1770 MHz",
+   "manufacturer": "EVGA"
+  },
+  {
+   "name": "Asus ROG STRIX GAMING OC V2",
+   "url": "https://pcpartpicker.com/product/hnNxFT/asus-geforce-rtx-3060-ti-lhr-8-gb-rog-strix-gaming-oc-v2-video-card-rog-strix-rtx3060ti-o8g-v2-gaming",
+   "chipset": "GeForce RTX 3060 Ti LHR",
+   "memory": "8 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1890 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "XFX Speedster SWFT 210",
+   "url": "https://pcpartpicker.com/product/tWJgXL/xfx-radeon-rx-6600-xt-8-gb-speedster-swft-210-video-card-rx-66xt8dfdq",
+   "chipset": "Radeon RX 6600 XT",
+   "memory": "8 GB",
+   "core_clock": "2092 MHz",
+   "boost_clock": "2589 MHz",
+   "manufacturer": "XFX"
+  },
+  {
+   "name": "XFX Speedster SWFT 309",
+   "url": "https://pcpartpicker.com/product/RFGbt6/xfx-radeon-rx-6700-xt-12-gb-speedster-swft-309-video-card-rx-67xtyjfdv",
+   "chipset": "Radeon RX 6700 XT",
+   "memory": "12 GB",
+   "core_clock": "2321 MHz",
+   "boost_clock": "2581 MHz",
+   "manufacturer": "XFX"
+  },
+  {
+   "name": "MSI VENTUS 2X OC",
+   "url": "https://pcpartpicker.com/product/ZcFbt6/msi-geforce-rtx-3070-lhr-8-gb-ventus-2x-oc-video-card-rtx-3070-ventus-2x-8g-oc-lhr",
+   "chipset": "GeForce RTX 3070 LHR",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1755 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Asus ROG STRIX GAMING OC",
+   "url": "https://pcpartpicker.com/product/gW7G3C/asus-geforce-rtx-3080-12gb-lhr-12-gb-rog-strix-gaming-oc-video-card-rog-strix-rtx3080-o12g-gaming",
+   "chipset": "GeForce RTX 3080 12GB LHR",
+   "memory": "12 GB",
+   "core_clock": "1260 MHz",
+   "boost_clock": "1890 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "MSI VENTUS 3X OC",
+   "url": "https://pcpartpicker.com/product/89BG3C/msi-geforce-rtx-3060-ti-lhr-8-gb-ventus-3x-oc-video-card-geforce-rtx-3060-ti-ventus-3x-8g-oc-lhr",
+   "chipset": "GeForce RTX 3060 Ti LHR",
+   "memory": "8 GB",
+   "core_clock": "1410 MHz",
+   "boost_clock": "1695 MHz",
+   "manufacturer": "MSI"
+  },
+  {
+   "name": "Asus TUF GAMING OC",
+   "url": "https://pcpartpicker.com/product/GTkgXL/asus-geforce-rtx-3090-24-gb-tuf-gaming-oc-video-card-tuf-rtx3090-o24g-gaming",
+   "chipset": "GeForce RTX 3090",
+   "memory": "24 GB",
+   "core_clock": "1395 MHz",
+   "boost_clock": "",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Asus TUF GAMING OC",
+   "url": "https://pcpartpicker.com/product/CX4BD3/asus-geforce-rtx-3070-8-gb-tuf-gaming-oc-video-card-tuf-rtx3070-o8g-gaming",
+   "chipset": "GeForce RTX 3070",
+   "memory": "8 GB",
+   "core_clock": "1500 MHz",
+   "boost_clock": "1845 MHz",
+   "manufacturer": "Asus"
+  },
+  {
+   "name": "Gigabyte EAGLE",
+   "url": "https://pcpartpicker.com/product/G9ytt6/gigabyte-radeon-rx-6600-8-gb-eagle-video-card-gv-r66eagle-8gd",
+   "chipset": "Radeon RX 6600",
+   "memory": "8 GB",
+   "core_clock": "1626 MHz",
+   "boost_clock": "2491 MHz",
+   "manufacturer": "Gigabyte"
+  },
+  {
+   "name": "NVIDIA Founders Edition",
+   "url": "https://pcpartpicker.com/product/c2kWGX/nvidia-geforce-rtx-3080-ti-12-gb-founders-edition-video-card-900-1g133-2518-000",
+   "chipset": "GeForce RTX 3080 Ti",
+   "memory": "12 GB",
+   "core_clock": "1370 MHz",
+   "boost_clock": "1670 MHz",
+   "manufacturer": "NVIDIA"
+  },
+  {
+   "name": "Sapphire PULSE",
+   "url": "https://pcpartpicker.com/product/X96p99/sapphire-radeon-rx-6700-10-gb-pulse-video-card-11321-02-20g",
+   "chipset": "Radeon RX 6700",
+   "memory": "10 GB",
+   "core_clock": "1941 MHz",
+   "boost_clock": "2495 MHz",
+   "manufacturer": "Sapphire"
+  },
+  {
+   "name": "PowerColor Red Dragon OC",
+   "url": "https://pcpartpicker.com/product/R4tKHx/powercolor-radeon-rx-6800-xt-16-gb-red-dragon-oc-video-card-axrx-6800xt-16gbd6-3dhroc",
+   "chipset": "Radeon RX 6800 XT",
+   "memory": "16 GB",
+   "core_clock": "1825 MHz",
+   "boost_clock": "2310 MHz",
+   "manufacturer": "PowerColor"
+  },
+  {
+   "name": "PNY XLR8 Gaming REVEL EPIC-X RGB",
+   "url": "https://pcpartpicker.com/product/4m8bt6/pny-geforce-rtx-3060-12-gb-xlr8-gaming-revel-epic-x-rgb-video-card-vcg306012sfxppb",
+   "chipset": "GeForce RTX 3060",
+   "memory": "12 GB",
+   "core_clock": "1320 MHz",
+   "boost_clock": "",
+   "manufacturer": "PNY"
+  }
+ ]
+}

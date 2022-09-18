@@ -1,0 +1,904 @@
+{
+ "cpu_name": [
+  {
+   "name": "AMD Ryzen 5 5600X",
+   "url": "https://pcpartpicker.com/product/g94BD3/amd-ryzen-5-5600x-37-ghz-6-core-processor-100-100000065box",
+   "cores": "6",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 7 5800X",
+   "url": "https://pcpartpicker.com/product/qtvqqs/amd-ryzen-7-5800x-38-ghz-8-core-processor-100-100000063wof",
+   "cores": "8",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4.7 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-12700K",
+   "url": "https://pcpartpicker.com/product/ZbddnQ/intel-core-i7-12700k-36-ghz-8-core-processor-bx8071512700k",
+   "cores": "12",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 9 5900X",
+   "url": "https://pcpartpicker.com/product/KwLwrH/amd-ryzen-9-5900x-37-ghz-12-core-processor-100-100000061wof",
+   "cores": "12",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-12600K",
+   "url": "https://pcpartpicker.com/product/BB4Ycf/intel-core-i5-12600k-37-ghz-6-core-processor-bx8071512600k",
+   "cores": "10",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i5-12400F",
+   "url": "https://pcpartpicker.com/product/pQNxFT/intel-core-i5-12400f-25-ghz-6-core-processor-bx8071512400f",
+   "cores": "6",
+   "core_clock": "2.5 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i9-12900K",
+   "url": "https://pcpartpicker.com/product/gGH7YJ/intel-core-i9-12900k-32-ghz-8-core-processor-bx8071512900k",
+   "cores": "16",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "5.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 5 5600G",
+   "url": "https://pcpartpicker.com/product/sYmmP6/amd-ryzen-5-5600g-39-ghz-6-core-processor-100-100000252box",
+   "cores": "6",
+   "core_clock": "3.9 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 5 3600",
+   "url": "https://pcpartpicker.com/product/9nm323/amd-ryzen-5-3600-36-thz-6-core-processor-100-100000031box",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 5 5600",
+   "url": "https://pcpartpicker.com/product/PgcG3C/amd-ryzen-5-5600-36-ghz-6-core-processor-100-100000927box",
+   "cores": "6",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 9 5950X",
+   "url": "https://pcpartpicker.com/product/Qk2bt6/amd-ryzen-9-5950x-34-ghz-16-core-processor-100-100000059wof",
+   "cores": "16",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 7 5700X",
+   "url": "https://pcpartpicker.com/product/JmhFf7/amd-ryzen-7-5700x-34-ghz-8-core-processor-100-100000926wof",
+   "cores": "8",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i3-12100F",
+   "url": "https://pcpartpicker.com/product/grhFf7/intel-core-i3-12100f-33-ghz-quad-core-processor-bx8071512100f",
+   "cores": "4",
+   "core_clock": "3.3 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i5-10400F",
+   "url": "https://pcpartpicker.com/product/vrhmP6/intel-core-i5-10400f-29-ghz-6-core-processor-bx8070110400f",
+   "cores": "6",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i3-10100F",
+   "url": "https://pcpartpicker.com/product/r8Dkcf/intel-core-i3-10100f-36-ghz-quad-core-processor-bx8070110100f",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i5-12600KF",
+   "url": "https://pcpartpicker.com/product/Tk8bt6/intel-core-i5-12600kf-37-ghz-6-core-processor-bx8071512600kf",
+   "cores": "10",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 5 5500",
+   "url": "https://pcpartpicker.com/product/yq2WGX/amd-ryzen-5-5500-36-ghz-6-core-processor-100-100000457box",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i9-12900KS",
+   "url": "https://pcpartpicker.com/product/sn4Ycf/intel-core-i9-12900ks-34-ghz-16-core-processor-bx8071512900ks",
+   "cores": "16",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "5.5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 7 5800X3D",
+   "url": "https://pcpartpicker.com/product/CZ3gXL/amd-ryzen-7-5800x3d-34-ghz-8-core-processor-100-100000651wof",
+   "cores": "8",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "4.5 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-11700K",
+   "url": "https://pcpartpicker.com/product/VW3gXL/intel-core-i7-11700k-36-ghz-8-core-processor-bx8070811700k",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 5 4500",
+   "url": "https://pcpartpicker.com/product/m8BG3C/amd-ryzen-5-4500-36-ghz-6-core-processor-100-100000644box",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.1 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-12400",
+   "url": "https://pcpartpicker.com/product/tLKKHx/intel-core-i5-12400-25-ghz-6-core-processor-bx8071512400",
+   "cores": "6",
+   "core_clock": "2.5 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i7-12700F",
+   "url": "https://pcpartpicker.com/product/LT3gXL/intel-core-i7-12700f-21-ghz-12-core-processor-bx8071512700f",
+   "cores": "12",
+   "core_clock": "2.1 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 7 5700G",
+   "url": "https://pcpartpicker.com/product/ycGbt6/amd-ryzen-7-5700g-38-ghz-8-core-processor-100-100000263box",
+   "cores": "8",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 7 3700X",
+   "url": "https://pcpartpicker.com/product/QKJtt6/amd-ryzen-7-3700x-36-ghz-8-core-processor-100-100000071box",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-11400F",
+   "url": "https://pcpartpicker.com/product/qp2WGX/intel-core-i5-11400f-26-ghz-6-core-processor-bx8070811400f",
+   "cores": "6",
+   "core_clock": "2.6 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-12700KF",
+   "url": "https://pcpartpicker.com/product/YDM48d/intel-core-i7-12700kf-36-ghz-8-core-processor-bx8071512700kf",
+   "cores": "12",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Threadripper 3990X",
+   "url": "https://pcpartpicker.com/product/KWmFf7/amd-threadripper-3990x-29-ghz-64-core-processor-100-100000163wof",
+   "cores": "64",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "AMD",
+   "socket": "sTRX4"
+  },
+  {
+   "name": "Intel Core i9-11900K",
+   "url": "https://pcpartpicker.com/product/mDcG3C/intel-core-i9-11900k-35-ghz-8-core-processor-bx8070811900k",
+   "cores": "8",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "5.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i9-12900KF",
+   "url": "https://pcpartpicker.com/product/2sstt6/intel-core-i9-12900kf-32-ghz-8-core-processor-bx8071512900kf",
+   "cores": "16",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "5.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i3-12100",
+   "url": "https://pcpartpicker.com/product/qrhFf7/intel-core-i3-12100-33-ghz-quad-core-processor-bx8071512100",
+   "cores": "4",
+   "core_clock": "3.3 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i5-11600K",
+   "url": "https://pcpartpicker.com/product/RK3gXL/intel-core-i5-11600k-39-ghz-6-core-processor-bx8070811600k",
+   "cores": "6",
+   "core_clock": "3.9 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-10700K",
+   "url": "https://pcpartpicker.com/product/yhxbt6/intel-core-i7-10700k-38-ghz-8-core-processor-bx8070110700k",
+   "cores": "8",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "5.1 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 5 2600",
+   "url": "https://pcpartpicker.com/product/jLF48d/amd-ryzen-5-2600-34ghz-6-core-processor-yd2600bbafbox",
+   "cores": "6",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "3.9 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i9-10900K",
+   "url": "https://pcpartpicker.com/product/cwFKHx/intel-core-i9-10900k-37-ghz-10-core-processor-bx8070110900k",
+   "cores": "10",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "5.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-12700",
+   "url": "https://pcpartpicker.com/product/XVRYcf/intel-core-i7-12700-21-ghz-12-core-processor-bx8071512700",
+   "cores": "12",
+   "core_clock": "2.1 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 7 3800X",
+   "url": "https://pcpartpicker.com/product/qryV3C/amd-ryzen-7-3800x-39-ghz-8-core-processor-100-100000025box",
+   "cores": "8",
+   "core_clock": "3.9 GHz",
+   "boost_clock": "4.5 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-9700K",
+   "url": "https://pcpartpicker.com/product/WtyV3C/intel-core-i7-9700k-36ghz-8-core-processor-bx80684i79700k",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-10400",
+   "url": "https://pcpartpicker.com/product/X8snTW/intel-core-i5-10400-29-ghz-6-core-processor-bx8070110400",
+   "cores": "6",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 9 3900X",
+   "url": "https://pcpartpicker.com/product/tLCD4D/amd-ryzen-9-3900x-36-ghz-12-core-processor-100-100000023box",
+   "cores": "12",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i3-10105F",
+   "url": "https://pcpartpicker.com/product/hYgFf7/intel-core-i3-10105f-37-ghz-quad-core-processor-bx8070110105f",
+   "cores": "4",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i5-12600",
+   "url": "https://pcpartpicker.com/product/HqXJ7P/intel-core-i5-12600-33-ghz-6-core-processor-bx8071512600",
+   "cores": "6",
+   "core_clock": "3.3 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "AMD Ryzen 5 3600X",
+   "url": "https://pcpartpicker.com/product/3WYLrH/amd-ryzen-5-3600x-38-ghz-6-core-processor-100-100000022box",
+   "cores": "6",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 7 2700X",
+   "url": "https://pcpartpicker.com/product/bddxFT/amd-ryzen-7-2700x-37ghz-8-core-processor-yd270xbgafbox",
+   "cores": "8",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i9-9900K",
+   "url": "https://pcpartpicker.com/product/jHZFf7/intel-core-i9-9900k-36ghz-8-core-processor-bx80684i99900k",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-9400F",
+   "url": "https://pcpartpicker.com/product/T47v6h/intel-core-i5-9400f-29-ghz-6-core-processor-bx80684i59400f",
+   "cores": "6",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.1 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i7-8700K",
+   "url": "https://pcpartpicker.com/product/sxDzK8/intel-core-i7-8700k-37ghz-6-core-processor-bx80684i78700k",
+   "cores": "6",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.7 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-11400",
+   "url": "https://pcpartpicker.com/product/92VmP6/intel-core-i5-11400-26-ghz-6-core-processor-bx8070811400",
+   "cores": "6",
+   "core_clock": "2.6 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-10700F",
+   "url": "https://pcpartpicker.com/product/PCvqqs/intel-core-i7-10700f-29-ghz-8-core-processor-bx8070110700f",
+   "cores": "8",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 5 4600G",
+   "url": "https://pcpartpicker.com/product/CNVmP6/amd-ryzen-5-4600g-37-ghz-6-core-processor-100-100000147box",
+   "cores": "6",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 3 3200G",
+   "url": "https://pcpartpicker.com/product/J8drxr/amd-ryzen-3-3200g-36-ghz-quad-core-processor-yd3200c5fhbox",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "AMD Ryzen 3 3100",
+   "url": "https://pcpartpicker.com/product/ndwkcf/amd-ryzen-3-3100-36-ghz-quad-core-processor-100-100000284box",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "3.9 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-10600K",
+   "url": "https://pcpartpicker.com/product/HcPgXL/intel-core-i5-10600k-41-ghz-6-core-processor-bx8070110600k",
+   "cores": "6",
+   "core_clock": "4.1 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i5-12500",
+   "url": "https://pcpartpicker.com/product/hvC48d/intel-core-i5-12500-3-ghz-6-core-processor-bx8071512500",
+   "cores": "6",
+   "core_clock": "3 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i3-10100",
+   "url": "https://pcpartpicker.com/product/qtqBD3/intel-core-i3-10100-36-ghz-quad-core-processor-bx8070110100",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i9-10850K",
+   "url": "https://pcpartpicker.com/product/nGFKHx/intel-core-i9-10850k-36-ghz-10-core-processor-bx8070110850k",
+   "cores": "10",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-10700KF",
+   "url": "https://pcpartpicker.com/product/sT3mP6/intel-core-i7-10700kf-38-ghz-8-core-processor-bx8070110700kf",
+   "cores": "8",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "5.1 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 3 4100",
+   "url": "https://pcpartpicker.com/product/drBG3C/amd-ryzen-3-4100-38-ghz-quad-core-processor-100-100000510box",
+   "cores": "4",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-7700K",
+   "url": "https://pcpartpicker.com/product/VKx9TW/intel-core-i7-7700k-42ghz-quad-core-processor-bx80677i77700k",
+   "cores": "4",
+   "core_clock": "4.2 GHz",
+   "boost_clock": "4.5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i7-6700K",
+   "url": "https://pcpartpicker.com/product/tdmxFT/intel-cpu-bx80662i76700k",
+   "cores": "4",
+   "core_clock": "4 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-9600K",
+   "url": "https://pcpartpicker.com/product/28qhP6/intel-core-i5-9600k-37ghz-6-core-processor-bx80684i59600k",
+   "cores": "6",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "AMD Ryzen 5 2600X",
+   "url": "https://pcpartpicker.com/product/6mm323/amd-ryzen-5-2600x-36ghz-6-core-processor-yd260xbcafbox",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-10600KF",
+   "url": "https://pcpartpicker.com/product/p6jNnQ/intel-core-i5-10600kf-41-ghz-6-core-processor-bx8070110600kf",
+   "cores": "6",
+   "core_clock": "4.1 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Athlon 3000G (14nm)",
+   "url": "https://pcpartpicker.com/product/664BD3/amd-athlon-3000g-35-ghz-dual-core-processor-yd3000c6fhbox",
+   "cores": "2",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "",
+   "manufacturer": "AMD",
+   "socket": "Radeon Vega 3"
+  },
+  {
+   "name": "Intel Core i7-11700KF",
+   "url": "https://pcpartpicker.com/product/Fgt9TW/intel-core-i7-11700kf-36-ghz-8-core-processor-bx8070811700kf",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-4790K",
+   "url": "https://pcpartpicker.com/product/6vzv6h/intel-cpu-bx80646i74790k",
+   "cores": "4",
+   "core_clock": "4 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1150"
+  },
+  {
+   "name": "AMD Ryzen 9 3950X",
+   "url": "https://pcpartpicker.com/product/t7CFf7/amd-ryzen-9-3950x-35-ghz-16-core-processor-100-100000051wof",
+   "cores": "16",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "4.7 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core 2 Duo E7300",
+   "url": "https://pcpartpicker.com/product/wWsKHx/intel-cpu-eu80571ph0673m",
+   "cores": "2",
+   "core_clock": "2.66 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "None"
+  },
+  {
+   "name": "AMD Threadripper 3960X",
+   "url": "https://pcpartpicker.com/product/kNyqqs/amd-ryzen-9-3960x-38-ghz-24-core-processor-100-100000010wof",
+   "cores": "24",
+   "core_clock": "3.8 GHz",
+   "boost_clock": "4.5 GHz",
+   "manufacturer": "AMD",
+   "socket": "sTRX4"
+  },
+  {
+   "name": "AMD Threadripper 3970X",
+   "url": "https://pcpartpicker.com/product/rkwkcf/amd-threadripper-3970x-37-ghz-32-core-processor-100-100000011wof",
+   "cores": "32",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.5 GHz",
+   "manufacturer": "AMD",
+   "socket": "sTRX4"
+  },
+  {
+   "name": "AMD Ryzen 5 1600 (14nm)",
+   "url": "https://pcpartpicker.com/product/mV98TW/amd-ryzen-5-1600-32ghz-6-core-processor-yd1600bbaebox",
+   "cores": "6",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "3.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i5-11600KF",
+   "url": "https://pcpartpicker.com/product/K3Z9TW/intel-core-i5-11600kf-39-ghz-6-core-processor-bx8070811600kf",
+   "cores": "6",
+   "core_clock": "3.9 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i9-10900KF",
+   "url": "https://pcpartpicker.com/product/CT3mP6/intel-core-i9-10900kf-37-ghz-10-core-processor-bx8070110900kf",
+   "cores": "10",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "5.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "AMD Ryzen 5 3400G",
+   "url": "https://pcpartpicker.com/product/XP6qqs/amd-ryzen-5-3400g-37-ghz-quad-core-processor-ryzen-5-3400g",
+   "cores": "4",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-8700",
+   "url": "https://pcpartpicker.com/product/C9hj4D/intel-core-i7-8700-32ghz-6-core-processor-bx80684i78700",
+   "cores": "6",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "4.6 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-8400",
+   "url": "https://pcpartpicker.com/product/LHYWGX/intel-core-i5-8400-28ghz-6-core-processor-bx80684i58400",
+   "cores": "6",
+   "core_clock": "2.8 GHz",
+   "boost_clock": "4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i3-10105",
+   "url": "https://pcpartpicker.com/product/Xht9TW/intel-core-i3-10105-37-ghz-quad-core-processor-bx8070110105",
+   "cores": "4",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "4.4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i9-12900",
+   "url": "https://pcpartpicker.com/product/JpJgXL/intel-core-i9-12900-24-ghz-16-core-processor-bx8071512900",
+   "cores": "16",
+   "core_clock": "2.4 GHz",
+   "boost_clock": "5.1 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i7-11700F",
+   "url": "https://pcpartpicker.com/product/QDcG3C/intel-core-i7-11700f-25-ghz-8-core-processor-bx8070811700f",
+   "cores": "8",
+   "core_clock": "2.5 GHz",
+   "boost_clock": "4.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i7-10700",
+   "url": "https://pcpartpicker.com/product/dLK2FT/intel-core-i7-10700-29-ghz-8-core-processor-bx8070110700",
+   "cores": "8",
+   "core_clock": "2.9 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1200"
+  },
+  {
+   "name": "Intel Core i9-12900F",
+   "url": "https://pcpartpicker.com/product/vDXJ7P/intel-core-i9-12900f-24-ghz-16-core-processor-bx8071512900f",
+   "cores": "16",
+   "core_clock": "2.4 GHz",
+   "boost_clock": "5.1 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1700"
+  },
+  {
+   "name": "Intel Core i5-6600K",
+   "url": "https://pcpartpicker.com/product/gx648d/intel-cpu-bx80662i56600k",
+   "cores": "4",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "3.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Celeron G6900",
+   "url": "https://pcpartpicker.com/product/QKbTwP/intel-celeron-g6900-34-ghz-dual-core-processor-bx80715g6900",
+   "cores": "2",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "Intel UHD Graphics 710"
+  },
+  {
+   "name": "AMD Ryzen 3 2200G",
+   "url": "https://pcpartpicker.com/product/RkJtt6/amd-ryzen-3-2200g-35ghz-quad-core-processor-yd2200c5fbbox",
+   "cores": "4",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "3.7 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-7700",
+   "url": "https://pcpartpicker.com/product/9mRFf7/intel-core-i7-7700-36ghz-quad-core-processor-bx80677i77700",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i9-10980XE",
+   "url": "https://pcpartpicker.com/product/bmxbt6/intel-core-i9-10980xe-3-ghz-18-core-processor-bx8069510980xe",
+   "cores": "18",
+   "core_clock": "3 GHz",
+   "boost_clock": "4.8 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA2066"
+  },
+  {
+   "name": "Intel Core i7-3770",
+   "url": "https://pcpartpicker.com/product/Vjzv6h/intel-cpu-bx80637i73770",
+   "cores": "4",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "Intel HD Graphics 4000"
+  },
+  {
+   "name": "Intel Pentium Gold G6400",
+   "url": "https://pcpartpicker.com/product/FvCFf7/intel-pentium-gold-g6400-4-ghz-dual-core-processor-bx80701g6400",
+   "cores": "2",
+   "core_clock": "4 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "Intel UHD Graphics 610"
+  },
+  {
+   "name": "Intel Core i9-9900KF",
+   "url": "https://pcpartpicker.com/product/G7KcCJ/intel-core-i9-9900kf-36-ghz-8-core-processor-bx80684i99900kf",
+   "cores": "8",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "5 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Celeron G5900",
+   "url": "https://pcpartpicker.com/product/37gQzy/intel-celeron-g5900-34-ghz-dual-core-processor-bx80701g5900",
+   "cores": "2",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "Intel UHD Graphics 610"
+  },
+  {
+   "name": "Intel Core i3-9100F",
+   "url": "https://pcpartpicker.com/product/YTbwrH/intel-core-i3-9100f-36-ghz-quad-core-processor-bx80684i39100f",
+   "cores": "4",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.2 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "AMD Ryzen 7 2700",
+   "url": "https://pcpartpicker.com/product/WPQG3C/amd-ryzen-7-2700-32ghz-8-core-processor-yd2700bbafbox",
+   "cores": "8",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "4.1 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-6700",
+   "url": "https://pcpartpicker.com/product/7V7CmG/intel-cpu-bx80662i76700",
+   "cores": "4",
+   "core_clock": "3.4 GHz",
+   "boost_clock": "4 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-8600K",
+   "url": "https://pcpartpicker.com/product/Mr2rxr/intel-core-i5-8600k-36ghz-6-core-processor-bx80684i58600k",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4.3 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-6500",
+   "url": "https://pcpartpicker.com/product/xwhj4D/intel-cpu-bx80662i56500",
+   "cores": "4",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "3.6 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1151"
+  },
+  {
+   "name": "Intel Core i5-4690K",
+   "url": "https://pcpartpicker.com/product/Tvzv6h/intel-cpu-bx80646i54690k",
+   "cores": "4",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "3.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1150"
+  },
+  {
+   "name": "AMD Ryzen 5 1600X",
+   "url": "https://pcpartpicker.com/product/8hwqqs/amd-ryzen-5-1600x-36ghz-6-core-processor-yd160xbcaewof",
+   "cores": "6",
+   "core_clock": "3.6 GHz",
+   "boost_clock": "4 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  },
+  {
+   "name": "Intel Core i7-4770K",
+   "url": "https://pcpartpicker.com/product/yT2kcf/intel-cpu-bx80646i74770k",
+   "cores": "4",
+   "core_clock": "3.5 GHz",
+   "boost_clock": "3.9 GHz",
+   "manufacturer": "Intel",
+   "socket": "LGA1150"
+  },
+  {
+   "name": "Intel Pentium Gold G7400",
+   "url": "https://pcpartpicker.com/product/KsBG3C/intel-pentium-gold-g7400-37-ghz-dual-core-processor-bx80715g7400",
+   "cores": "2",
+   "core_clock": "3.7 GHz",
+   "boost_clock": "",
+   "manufacturer": "Intel",
+   "socket": "Intel UHD Graphics 710"
+  },
+  {
+   "name": "AMD Ryzen 5 1600 (12nm)",
+   "url": "https://pcpartpicker.com/product/8HqBD3/amd-ryzen-5-1600-12nm-32-ghz-6-core-processor-yd1600bbafbox",
+   "cores": "6",
+   "core_clock": "3.2 GHz",
+   "boost_clock": "3.6 GHz",
+   "manufacturer": "AMD",
+   "socket": "AM4"
+  }
+ ]
+}
