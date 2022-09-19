@@ -11,7 +11,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import cpu_route from "./services/compatibility/handlers/cpu";
 import gpu_route from "./services/compatibility/handlers/gpu";
-
+import memory_route from "./services/compatibility/handlers/memory";
+import motherboard_route from "./services/compatibility/handlers/motherboard";
 const app: express.Application = express();
 const port: string = "3000";
 
@@ -44,6 +45,8 @@ product_route(app);
 review_route(app);
 cpu_route(app);
 gpu_route(app);
+memory_route(app);
+motherboard_route(app);
 app.listen(3000, function () {
   console.log(`Starting app on: http://localhost:${port}`);
 });
