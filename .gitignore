@@ -1,1 +1,5 @@
 node_modules
+migrations/sqls/20220716202513-CPU-up
+migrations/sqls/20220716203300-GPU-up
+migrations/sqls/20220716203417-Motherboard-up
+migrations/sqls/20220716203755-Memory-up
