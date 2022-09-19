@@ -13,14 +13,13 @@ export type cpu = {
 };
 
 export class cpuClass {
-  //get all admins for admins only
   async getAllcpus(): Promise<cpu[]> {
     try {
                //wait the response from server
 
       const conn = await client.connect();
 
-      const sql = "SELECT * FROM admins";
+      const sql = "SELECT * FROM cpu";
       const result = await conn.query(sql);
       //close the connection
       conn.release();
