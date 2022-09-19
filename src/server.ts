@@ -9,6 +9,8 @@ import product_route from "./handlers/product";
 import review_route from "./handlers/review";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import cpu_route from "./services/compatibility/handlers/cpu";
+import gpu_route from "./services/compatibility/handlers/gpu";
 
 const app: express.Application = express();
 const port: string = "3000";
@@ -40,7 +42,8 @@ order_route(app);
 category_route(app);
 product_route(app);
 review_route(app);
-
+cpu_route(app);
+gpu_route(app);
 app.listen(3000, function () {
   console.log(`Starting app on: http://localhost:${port}`);
 });
