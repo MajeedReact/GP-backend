@@ -23,37 +23,46 @@ const getAllReviewByProductID = async (req: Request, res: Response) => {
   }
 };
 
+const getReviewByID = async (req: Request, res: Response) => {
+  try {
+    const result = await store.getReviewByID(
+      req.params.id as unknown as number
+    );
+    res.json(result);
+  } catch (error) {
+    throw new Error(`An Error occured while getting review ${error}`);
+  }
+};
+
 const insertReview = async (req: Request, res: Response) => {
-  var date = moment().format("MMMM Do YYYY, h:mm:ss") as String;
-  // let {created_at, useer_id} = req.body;
-
-  // created_at.array.forEach(element: review => {
-  //   console.log(element);
-  // });
-
-  const reviewObject: review = {
-    created_at: date,
-    description: req.body.description,
-    rating: req.body.rating,
-    product_id: 1,
-    customer_id: 1,
-  };
   try {
     //cheeck if the user logged in or not
     //check if the user bought the product or not
     //cheeck if the user already posted a review or not
     var token = req.cookies.token;
     var decode = jwt.decode(token) as customer;
-    var product_id = req.body.product_id;
+
+    const reviewObject: review = {
+      description: req.body.description,
+      rating: req.body.rating,
+      product_id: req.body.product_id,
+      customer_id: decode.customer_id as unknown as number,
+    };
 
     //check if the user bought the product or not
-    const result = await store.checkReview(1, product_id);
+    const result = await store.checkReview(
+      decode.customer_id as unknown as number,
+      reviewObject.product_id
+    );
     //check if the user already posted a review or not
-    const checkDuplicate = await store.checkDuplicate(1, product_id);
-    console.log(decode.customer_id);
+    const checkDuplicate = await store.checkDuplicate(
+      decode.customer_id as unknown as number,
+      reviewObject.product_id
+    );
+
     //if the user bought the product and have not posted a review then true
     if (result) {
-      if (!checkDuplicate) {
+      if (checkDuplicate) {
         const postReview = store.insertReview(reviewObject);
         res.status(200).json(postReview);
 
@@ -74,10 +83,11 @@ const insertReview = async (req: Request, res: Response) => {
     throw new Error(`An Error occured while getting reviews ${error}`);
   }
 };
+``;
 
 const review_route = (app: express.Application) => {
   app.get("/review/product/:id", getAllReviewByProductID);
-  app.get("/review/:id", getAllReviewByProductID);
+  app.get("/review/:id", getReviewByID);
   app.post("/review", checkAuth, auth.isCustomer, insertReview);
 };
 

@@ -25,9 +25,6 @@ const allOrders = async (_req: Request, res: Response) => {
 
 const createOrder = async (req: Request, res: Response) => {
   try {
-    //get date and time
-    const date = moment().format("MMMM Do YYYY, h:mm:ss a");
-
     //get customer_id from token
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
@@ -35,7 +32,7 @@ const createOrder = async (req: Request, res: Response) => {
     //generate unique order authentication
     const uniqueID = uuidv4();
     console.log(uniqueID.substring(0, 6));
-    //if placing a purchase is a seller return 401
+    //if placing an order is a seller return 401
     if (decode.role_id == 2)
       return res.status(403).json("Seller cannot buy orders");
 
@@ -44,13 +41,11 @@ const createOrder = async (req: Request, res: Response) => {
     const productInfo = (await productModel.getProductWithId(
       product[0].id as number
     )) as product;
-    // console.log(decode.customer_id);
     //create a new order
 
     const order: order = {
       order_status: "New",
       customer_id: decode.customer_id as number,
-      order_date: date,
       seller_id: productInfo.seller_id,
       order_auth: uniqueID.substring(0, 6),
     };

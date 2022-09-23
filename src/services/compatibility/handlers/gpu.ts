@@ -13,7 +13,7 @@ const getAllgpus = async (_req: Request, res: Response) => {
 };
 
 const gpu_route = (app: express.Application) => {
-  app.get("/cpu", getAllgpus);
+  app.get("/gpu", getAllgpus);
 };
 
 export default gpu_route;

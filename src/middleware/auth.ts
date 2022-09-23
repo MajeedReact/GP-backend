@@ -8,12 +8,15 @@ dotenv.config();
 const checkAuth = (req: Request, res: Response, next: Function) => {
   const token = req.cookies.token;
   try {
-    const decode = jwt.verify(token, process.env.TOKEN_SECRET as Secret);
-
+    //if there is no token
     if (!token) {
       res.status(401).json("Unauthorized");
       return;
     }
+
+    const decode = jwt.verify(token, process.env.TOKEN_SECRET as Secret);
+
+    //if token is invalid
     if (!decode) {
       res.status(401).json("Invalid Token");
       return;

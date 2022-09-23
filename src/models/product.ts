@@ -6,7 +6,6 @@ export type product = {
   product_quantity: number;
   product_description: string;
   tags: string;
-  created_at: string;
   price: number;
   lat: number;
   lan: number;
@@ -60,12 +59,11 @@ export class products {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO product (product_name, product_quantity, product_description, created_at, price, tags, lat, lan, city, neighborhood, seller_id, category_id) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11, $12)";
+        "INSERT INTO product (product_name, product_quantity, product_description, price, tags, lat, lan, city, neighborhood, seller_id, category_id) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11)";
       const result = await conn.query(sql, [
         p.product_name,
         p.product_quantity,
         p.product_description,
-        p.created_at,
         p.price,
         p.tags,
         p.lat,

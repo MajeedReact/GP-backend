@@ -1,6 +1,5 @@
 import express, { Request, Response } from "express";
 import { product, products } from "../models/product";
-import moment from "moment";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
 import jwt, { Secret } from "jsonwebtoken";
@@ -34,7 +33,6 @@ const getProductWithId = async (req: Request, res: Response) => {
 };
 
 const createProduct = async (req: Request, res: Response) => {
-  var date = moment().format("MMMM Do YYYY, h:mm:ss");
   //get seller id
   var token = req.cookies.token;
   var sellerID = jwt.decode(token) as seller;
@@ -44,7 +42,6 @@ const createProduct = async (req: Request, res: Response) => {
     product_quantity: req.body.pQuantity,
     product_description: req.body.pDescription,
     tags: req.body.pTag,
-    created_at: date,
     price: req.body.price,
     lat: req.body.lat,
     lan: req.body.lan,

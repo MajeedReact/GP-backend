@@ -4,7 +4,6 @@ export type order = {
   order_id?: number;
   order_status: string;
   customer_id: number;
-  order_date: string;
   seller_id: number;
   order_auth: string;
 };
@@ -115,12 +114,11 @@ export class orders {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO orders(order_status, customer_id, order_date, seller_id, order_auth) VALUES ($1, $2, $3, $4, $5) RETURNING *";
+        "INSERT INTO orders(order_status, customer_id, seller_id, order_auth) VALUES ($1, $2, $3, $4) RETURNING *";
 
       const result = await conn.query(sql, [
         o.order_status,
         o.customer_id,
-        o.order_date,
         o.seller_id,
         o.order_auth,
       ]);
