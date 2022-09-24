@@ -98,12 +98,10 @@ const mostOrderedProduct = async (req_: Request, res: Response) => {
     res.status(200).json(result);
   } catch (error) {
     throw new Error(
-      "An Error occured while retriving most ordered products " +
-        error
+      "An Error occured while retriving most ordered products " + error
     );
   }
 };
-
 
 const dashboardAdmin_route = (app: express.Application) => {
   app.get(
@@ -154,12 +152,6 @@ const dashboardAdmin_route = (app: express.Application) => {
     auth.adminRole,
     numberOfProductsLast7Days
   );
-  app.get(
-    "/MostOrderedProduct",
-    checkAuth,
-    auth.adminRole,
-    mostOrderedProduct
-  );
-
+  app.get("/MostOrderedProduct", checkAuth, auth.adminRole, mostOrderedProduct);
 };
 export default dashboardAdmin_route;
