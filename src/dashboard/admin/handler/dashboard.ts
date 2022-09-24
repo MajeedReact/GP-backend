@@ -71,6 +71,39 @@ const numberOfOrdersLast7Days = async (req_: Request, res: Response) => {
     );
   }
 };
+const getNumberOfProductsEachMonth = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.getNumberOfProductsEachMonth();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving number of products each month" + error
+    );
+  }
+};
+const numberOfProductsLast7Days = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.numberOfProductsLast7Days();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving number of products for the last 7 days " +
+        error
+    );
+  }
+};
+const mostOrderedProduct = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.mostOrderedProduct();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving most ordered products " +
+        error
+    );
+  }
+};
+
 
 const dashboardAdmin_route = (app: express.Application) => {
   app.get(
@@ -109,5 +142,24 @@ const dashboardAdmin_route = (app: express.Application) => {
     auth.adminRole,
     numberOfOrdersLast7Days
   );
+  app.get(
+    "/ProductsLastMonth",
+    checkAuth,
+    auth.adminRole,
+    getNumberOfProductsEachMonth
+  );
+  app.get(
+    "/ProductsLast7Days",
+    checkAuth,
+    auth.adminRole,
+    numberOfProductsLast7Days
+  );
+  app.get(
+    "/MostOrderedProduct",
+    checkAuth,
+    auth.adminRole,
+    mostOrderedProduct
+  );
+
 };
 export default dashboardAdmin_route;
