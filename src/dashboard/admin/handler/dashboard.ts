@@ -50,6 +50,27 @@ const numberOfSellersLast7Days = async (req_: Request, res: Response) => {
     );
   }
 };
+const getNumberOfOrdersEachMonth = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.getNumberOfOrdersEachMonth();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving number of Orders each month" + error
+    );
+  }
+};
+const numberOfOrdersLast7Days = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.numberOfOrdersLast7Days();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving number of Orders for the last 7 days " +
+        error
+    );
+  }
+};
 
 const dashboardAdmin_route = (app: express.Application) => {
   app.get(
@@ -75,6 +96,18 @@ const dashboardAdmin_route = (app: express.Application) => {
     checkAuth,
     auth.adminRole,
     numberOfSellersLast7Days
+  );
+  app.get(
+    "/OrdersEachMonth",
+    checkAuth,
+    auth.adminRole,
+    getNumberOfOrdersEachMonth
+  );
+  app.get(
+    "/OrdersLast7Days",
+    checkAuth,
+    auth.adminRole,
+    numberOfOrdersLast7Days
   );
 };
 export default dashboardAdmin_route;
