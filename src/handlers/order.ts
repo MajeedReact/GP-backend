@@ -83,6 +83,7 @@ const createOrder = async (req: Request, res: Response) => {
         order_id: insertOrder.order_id as number,
         product_id: product_id,
         qty: qty,
+        customer_id: decode.customer_id,
       };
 
       let insertDetails = await store.insertOrderDetails(order_details);

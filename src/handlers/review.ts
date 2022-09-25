@@ -51,8 +51,8 @@ const insertReview = async (req: Request, res: Response) => {
 
     //check if the user bought the product or not
     const result = await store.checkReview(
-      decode.customer_id as unknown as number,
-      reviewObject.product_id
+      reviewObject.product_id,
+      decode.customer_id as unknown as number
     );
     //check if the user already posted a review or not
     const checkDuplicate = await store.checkDuplicate(
@@ -60,30 +60,42 @@ const insertReview = async (req: Request, res: Response) => {
       reviewObject.product_id
     );
 
-    //if the user bought the product and have not posted a review then true
-    if (result) {
-      if (checkDuplicate) {
-        const postReview = store.insertReview(reviewObject);
-        res.status(200).json(postReview);
+    //
+    // if (result) {
+    //   if (checkDuplicate) {
+    //     const postReview = store.insertReview(reviewObject);
+    //     res.status(200).json(postReview);
 
-        return;
-      } else {
-        res.json("You already posted a review");
-        return;
-      }
-    } else {
-      res
-        .status(401)
-        .json(
-          "You cannot submit reviews because you have not bought this product!"
-        );
+    //     return;
+    //   } else {
+    //     res.json("You already posted a review");
+    //     return;
+    //   }
+    // } else {
+    //   res
+    //     .status(401)
+    //     .json(
+    //       "You cannot submit reviews because you have not bought this product!"
+    //     );
+    //   return;
+    // }
+    //if the user bought the product
+    if (!result) {
+      res.status(403).json("You have not bought the product");
       return;
     }
+    //if there is a duplicate then it should return true
+    if (checkDuplicate) {
+      res.status(403).json("You already posted a review");
+      return;
+    }
+
+    const postReview = await store.insertReview(reviewObject);
+    res.status(200).json(postReview);
   } catch (error) {
     throw new Error(`An Error occured while getting reviews ${error}`);
   }
 };
-``;
 
 const review_route = (app: express.Application) => {
   app.get("/review/product/:id", getAllReviewByProductID);

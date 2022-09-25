@@ -136,12 +136,13 @@ export class orders {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO orders_details(order_id, product_id, quantity ) VALUES ($1, $2, $3)";
+        "INSERT INTO orders_details(order_id, product_id, quantity, customer_id) VALUES ($1, $2, $3, $4)";
 
       const result = await conn.query(sql, [
         od.order_id,
         od.product_id,
         od.qty,
+        od.customer_id,
       ]);
 
       conn.release();
