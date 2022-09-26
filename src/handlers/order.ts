@@ -4,14 +4,18 @@ import jwt from "jsonwebtoken";
 import { customer } from "../models/customers";
 import { product, products } from "../models/product";
 import checkAuth from "../middleware/auth";
-import moment from "moment";
 import { seller } from "../models/Sellers";
 import { v4 as uuidv4 } from "uuid";
 import { authorization } from "../middleware/authorization";
+import { sellers } from "../models/Sellers";
+import email from "../nodemailer/nodemailer";
+
+const sellerOrder = new sellers();
 
 const store = new orders();
 const productModel = new products();
 const auth = new authorization();
+const emailService = new email();
 
 //admin use
 const allOrders = async (_req: Request, res: Response) => {
@@ -41,6 +45,11 @@ const createOrder = async (req: Request, res: Response) => {
     const productInfo = (await productModel.getProductWithId(
       product[0].id as number
     )) as product;
+
+    if (productInfo == undefined || productInfo == null) {
+      res.status(404).json("No Seller id found");
+      return;
+    }
     //create a new order
 
     const order: order = {
@@ -58,7 +67,7 @@ const createOrder = async (req: Request, res: Response) => {
         product_id
       )) as product;
 
-      if (productInfo.seller_id == undefined || productInfo.seller_id == null) {
+      if (productInfo == undefined || productInfo == null) {
         res.status(404).json("No Seller id found");
         return;
       }
@@ -90,6 +99,31 @@ const createOrder = async (req: Request, res: Response) => {
 
       console.log(`Successfully inserted ${insertDetails}`);
     }
+    //get seller information so we can use it to send an email to it
+    const getSellerInfo = await sellerOrder.getSellerWithId(
+      productInfo.seller_id
+    );
+    const sellerEmail = getSellerInfo.seller_email;
+    console.log(sellerEmail);
+    console.log(decode.customer_email);
+
+    try {
+      //send email to customer
+      emailService.emailTo(
+        decode.customer_email,
+        "New Order",
+        `Thank you for shopping with us, a new order was created your order ID is ${insertOrder.order_id}`
+      );
+      //send email
+      emailService.emailTo(
+        sellerEmail,
+        "New Order",
+        `A customer have purchased products from you, a new order was created your order ID is ${insertOrder.order_id}`
+      );
+    } catch (error) {
+      throw new Error("An Error occured while sending " + error);
+    }
+
     res.json(insertOrder);
   } catch (error) {
     throw new Error("An Error occured while creating an order " + error);

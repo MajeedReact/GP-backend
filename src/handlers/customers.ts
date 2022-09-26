@@ -57,8 +57,8 @@ const authenticate = async (req: Request, res: Response) => {
     const login = await store.loginCustomer(req.body.email, req.body.password);
     if (login != null) {
       const loginCustomer = {
-        Cus_First_Name: login.cus_first_name,
-        customer_Email: login.customer_email,
+        cus_first_eame: login.cus_first_name,
+        customer_email: login.customer_email,
         customer_id: login.customer_id,
         role_id: login.role_id,
       };
