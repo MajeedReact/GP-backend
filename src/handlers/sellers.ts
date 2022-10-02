@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
 import { seller, sellers } from "../models/Sellers";
-import { InvalidPassword } from "../customException/registeration/invalidPassword";
+import { registerationException } from "../customException/registeration/registerException";
 
 const store = new sellers();
 
@@ -34,7 +34,7 @@ const createSeller = async (req: Request, res: Response) => {
   try {
     if (sellers.seller_password.length < 8) {
       res.json("Invalid Password");
-      throw new InvalidPassword("invalid password");
+      throw new registerationException("invalid password");
     }
   } catch (error) {
     throw new Error("An error occured " + error);
@@ -51,8 +51,11 @@ const createSeller = async (req: Request, res: Response) => {
       });
       console.log(sellers.role_id);
       res.json(token);
-    } else res.json("an Email already exists!");
-    return;
+    } else {
+
+      res.json("an Email already exists!");
+      throw new registerationException("an Email already exists!");
+      } 
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
   }

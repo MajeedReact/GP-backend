@@ -3,7 +3,7 @@ import { customer, customers } from "../models/customers";
 import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
-import { InvalidPassword } from "../customException/registeration/invalidPassword";
+import { registerationException } from "../customException/registeration/registerException";
 
 const store = new customers();
 const auth = new authorization();
@@ -41,7 +41,7 @@ const createCustomer = async (req: Request, res: Response) => {
   try {
     if (customer.customer_password.length < 8) {
       res.json("Invalid Password");
-      throw new InvalidPassword("invalid password");
+      throw new registerationException("invalid password");
     }
   } catch (error) {
     throw new Error("An error occured " + error);
@@ -59,10 +59,13 @@ const createCustomer = async (req: Request, res: Response) => {
       });
       console.log(newCustomer.customer_id);
       res.json(token);
-    } else res.json("an Email already exists!");
-    return;
-  } catch (err) {
-    throw new Error("An error occured while creating the account " + err);
+    } else {
+
+    res.json("an Email already exists!");
+    throw new registerationException("an Email already exists!");
+    }
+  } catch (error) {
+    throw new Error("An error occured while creating the account " + error);
   }
   //email check
   //end of customer creation
