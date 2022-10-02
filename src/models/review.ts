@@ -49,7 +49,7 @@ export class reviewClass {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO review (description, rating, product_id, customer_id) VALUES($1, $2, $3, $4)";
+        "INSERT INTO review (description, rating, product_id, customer_id) VALUES($1, $2, $3, $4) RETURNING *";
 
       const result = await conn.query(sql, [
         r.description,
@@ -65,14 +65,14 @@ export class reviewClass {
   }
 
   async checkReview(
-    customer_id: number,
-    product_id: number
+    product_id: number,
+    customer_id: number
   ): Promise<boolean | undefined> {
     try {
       const conn = await client.connect();
       //check if the user bought
       const sql =
-        "SELECT customer_id FROM orders INNER JOIN orders_details ON orders_details.product_id = $1 WHERE customer_id = $2";
+        "SELECT * from orders_details WHERE product_id = $1 AND customer_id = $2;";
 
       const result = await conn.query(sql, [product_id, customer_id]);
 
@@ -100,8 +100,10 @@ export class reviewClass {
       conn.release();
 
       if (result.rows.length > 0) {
-        return false;
-      } else return true;
+        return true;
+      } else return false;
     } catch (error) {}
   }
+
+  //TODO update method review
 }

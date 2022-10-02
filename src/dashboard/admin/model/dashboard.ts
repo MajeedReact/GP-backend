@@ -79,7 +79,7 @@ export default class dashboardAdmin {
       );
     }
   }
-
+//number of order each mounth
   async getNumberOfOrdersEachMonth() {
     try {
       const conn = await client.connect();
@@ -98,6 +98,7 @@ export default class dashboardAdmin {
       );
     }
   }
+  //number of order last week
   async numberOfOrdersLast7Days() {
     try {
       const conn = await client.connect();
