@@ -8,7 +8,7 @@ const auth = new authorization();
 
 require("dotenv").config();
 
-const getAllCustomers = async (_req: Request, res: Response) => {
+const getAllCustomers = async ( res: Response) => {
   try {
     const allCustomers = await store.getAllCustomers();
     res.json(allCustomers);
@@ -25,7 +25,7 @@ const getCustomerWithId = async (req: Request, res: Response) => {
   if (seller != null) res.json(seller);
   else res.json("No user found with that ID");
 };
-
+//customer creation
 const createCustomer = async (req: Request, res: Response) => {
   const customer: customer = {
     customer_email: req.body.email,
@@ -33,8 +33,23 @@ const createCustomer = async (req: Request, res: Response) => {
     cus_last_name: req.body.lastN,
     customer_password: req.body.cPass,
     role_id: 1,
+
   };
 
+  //creat password exception 
+  try{
+    const checkPassword = customer.customer_password;
+if(checkPassword.length<8){
+  throw new InvalidPassword("invalid password");
+}
+
+
+}catch(err){
+throw new Error("err occured");
+}
+//end of Ecxaption
+
+//email check
   try {
     const checkEmail = await store.checkEmail(customer.customer_email);
     if (!checkEmail) {
@@ -50,6 +65,8 @@ const createCustomer = async (req: Request, res: Response) => {
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
   }
+  //email check
+//end of customer creation
 };
 
 const authenticate = async (req: Request, res: Response) => {
