@@ -3,12 +3,14 @@ import { customer, customers } from "../models/customers";
 import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
+import { InvalidPassword } from "../customException/registeration/invalidPassword";
+
 const store = new customers();
 const auth = new authorization();
 
 require("dotenv").config();
 
-const getAllCustomers = async ( res: Response) => {
+const getAllCustomers = async (res: Response) => {
   try {
     const allCustomers = await store.getAllCustomers();
     res.json(allCustomers);
@@ -33,23 +35,20 @@ const createCustomer = async (req: Request, res: Response) => {
     cus_last_name: req.body.lastN,
     customer_password: req.body.cPass,
     role_id: 1,
-
   };
 
-  //creat password exception 
-  try{
-    const checkPassword = customer.customer_password;
-if(checkPassword.length<8){
-  throw new InvalidPassword("invalid password");
-}
+  //create password exception
+  try {
+    if (customer.customer_password.length < 8) {
+      res.json("Invalid Password");
+      throw new InvalidPassword("invalid password");
+    }
+  } catch (error) {
+    throw new Error("An error occured " + error);
+  }
+  //end of Ecxaption
 
-
-}catch(err){
-throw new Error("err occured");
-}
-//end of Ecxaption
-
-//email check
+  //email check
   try {
     const checkEmail = await store.checkEmail(customer.customer_email);
     if (!checkEmail) {
@@ -66,7 +65,7 @@ throw new Error("err occured");
     throw new Error("An error occured while creating the account " + err);
   }
   //email check
-//end of customer creation
+  //end of customer creation
 };
 
 const authenticate = async (req: Request, res: Response) => {

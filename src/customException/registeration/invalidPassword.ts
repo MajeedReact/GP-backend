@@ -1,6 +1,5 @@
-class InvalidPassword extends Error{
-constructor(message:string){
-super(message)
-}
-    
+export class InvalidPassword extends Error {
+  constructor(message: string) {
+    super(message);
+  }
 }

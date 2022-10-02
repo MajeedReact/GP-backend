@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
 import { seller, sellers } from "../models/Sellers";
+import { InvalidPassword } from "../customException/registeration/invalidPassword";
 
 const store = new sellers();
 
@@ -29,7 +30,16 @@ const createSeller = async (req: Request, res: Response) => {
     role_id: 2,
   };
 
-  console.log(sellers.seller_email);
+  //create password exception
+  try {
+    if (sellers.seller_password.length < 8) {
+      res.json("Invalid Password");
+      throw new InvalidPassword("invalid password");
+    }
+  } catch (error) {
+    throw new Error("An error occured " + error);
+  }
+  //end of Ecxaption
 
   try {
     const checkEmail = await store.checkEmail(sellers.seller_email);
