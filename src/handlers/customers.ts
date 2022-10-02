@@ -4,6 +4,7 @@ import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
 import { registerationException } from "../customException/registeration/registerException";
+import { loginException } from "../customException/loginException";
 
 const store = new customers();
 const auth = new authorization();
@@ -95,7 +96,7 @@ const authenticate = async (req: Request, res: Response) => {
       return;
     }
     res.json("Invalid Email or Password");
-    return;
+    throw new loginException("Invalied Email or password");
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }

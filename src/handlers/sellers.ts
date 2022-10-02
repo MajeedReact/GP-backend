@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
 import { seller, sellers } from "../models/Sellers";
 import { registerationException } from "../customException/registeration/registerException";
+import { loginException } from "../customException/loginException";
 
 const store = new sellers();
 
@@ -85,7 +86,8 @@ const authenticate = async (req: Request, res: Response) => {
       return;
     }
     res.json("Invalid Email or Password");
-    return;
+    throw new loginException("Invalied Email or password");
+
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }
