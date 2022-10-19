@@ -1,7 +1,8 @@
 import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
 import { seller, sellers } from "../models/Sellers";
-import { InvalidPassword } from "../customException/registeration/invalidPassword";
+import { registerationException } from "../customException/registeration/registerException";
+import { loginException } from "../customException/loginException";
 
 const store = new sellers();
 
@@ -34,7 +35,7 @@ const createSeller = async (req: Request, res: Response) => {
   try {
     if (sellers.seller_password.length < 8) {
       res.json("Invalid Password");
-      throw new InvalidPassword("invalid password");
+      throw new registerationException("invalid password");
     }
   } catch (error) {
     throw new Error("An error occured " + error);
@@ -50,9 +51,18 @@ const createSeller = async (req: Request, res: Response) => {
         expiresIn: "1d",
       });
       console.log(sellers.role_id);
+<<<<<<< HEAD
       res.json("token");
     } else res.json("an Email already exists!");
     return;
+=======
+      res.json(token);
+    } else {
+
+      res.json("an Email already exists!");
+      throw new registerationException("an Email already exists!");
+      } 
+>>>>>>> 59f15fb5eb3d8fe59d856c53db622f6623efb6f2
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
   }
@@ -82,7 +92,8 @@ const authenticate = async (req: Request, res: Response) => {
       return;
     }
     res.json("Invalid Email or Password");
-    return;
+    throw new loginException("Invalied Email or password");
+
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }

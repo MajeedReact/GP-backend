@@ -3,7 +3,8 @@ import { customer, customers } from "../models/customers";
 import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
-import { InvalidPassword } from "../customException/registeration/invalidPassword";
+import { registerationException } from "../customException/registeration/registerException";
+import { loginException } from "../customException/loginException";
 
 const store = new customers();
 const auth = new authorization();
