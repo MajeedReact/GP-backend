@@ -19,16 +19,25 @@ import dashboardSeller_route from "./dashboard/seller/handler/dashboard";
 const app: express.Application = express();
 const port: string = "3000";
 
-//so any website can use this API and not get blocked by CORS
+// //so any website can use this API and not get blocked by CORS
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "*"); // update to match the domain you will make the request from
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 app.get("/", function (req: Request, res: Response) {
   res.send("Working");
 });
 
-//change origin to frontend
+// change origin to frontend
 app.use(
   cors({
-    origin: "http://127.0.0.1",
+    origin: "http://localhost:4200",
     credentials: true,
   })
 );

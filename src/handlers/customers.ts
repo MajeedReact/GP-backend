@@ -30,23 +30,23 @@ const getCustomerWithId = async (req: Request, res: Response) => {
 //customer creation
 const createCustomer = async (req: Request, res: Response) => {
   const customer: customer = {
-    customer_email: req.body.email,
-    cus_first_name: req.body.firstN,
-    cus_last_name: req.body.lastN,
-    customer_password: req.body.cPass,
+    customer_email: req.body.customer_email,
+    cus_first_name: req.body.cus_first_name,
+    cus_last_name: req.body.cus_last_name,
+    customer_password: req.body.customer_password,
     role_id: 1,
   };
 
-  //create password exception
-  try {
-    if (customer.customer_password.length < 8) {
-      res.json("Invalid Password");
-      throw new InvalidPassword("invalid password");
-    }
-  } catch (error) {
-    throw new Error("An error occured " + error);
-  }
-  //end of Ecxaption
+  // //create password exception
+  // try {
+  //   if (customer.customer_password.length < 8) {
+  //     res.json("Invalid Password");
+  //     throw new InvalidPassword("invalid password");
+  //   }
+  // } catch (error) {
+  //   throw new Error("An error occured " + error);
+  // }
+  // //end of Ecxaption
 
   //email check
   try {
@@ -58,8 +58,8 @@ const createCustomer = async (req: Request, res: Response) => {
         expiresIn: "1d",
       });
       console.log(newCustomer.customer_id);
-      res.json(token);
-    } else res.json("an Email already exists!");
+      res.json("success");
+    } else res.status(400).json("an Email already exists!");
     return;
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
@@ -84,20 +84,24 @@ const authenticate = async (req: Request, res: Response) => {
       });
 
       res.cookie("token", token, {
-        maxAge: 7200,
+        maxAge: 2 * 60 * 60 * 1000,
         // httpOnly: true,
       });
       req.cookies.token;
       res.json(token);
       return;
     }
-    res.json("Invalid Email or Password");
+    res.status(400).json("Invalid Email or Password");
     return;
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }
 };
 
+const logout = async (req: Request, res: Response) => {
+  //set cookie age to 0 so it gets cleared immediately
+  res.cookie("token", "", { maxAge: 0 });
+};
 const profile = async (req: Request, res: Response) => {
   try {
     var token = req.cookies.token;
@@ -119,6 +123,7 @@ const customer_route = (app: express.Application) => {
   app.post("/customer", createCustomer);
   app.post("/auth/customer", authenticate);
   app.get("/profile", checkAuth, profile);
+  app.post("/logout", logout);
 };
 
 export default customer_route;

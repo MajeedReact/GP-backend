@@ -50,7 +50,7 @@ const createSeller = async (req: Request, res: Response) => {
         expiresIn: "1d",
       });
       console.log(sellers.role_id);
-      res.json(token);
+      res.json("token");
     } else res.json("an Email already exists!");
     return;
   } catch (err) {
@@ -75,7 +75,7 @@ const authenticate = async (req: Request, res: Response) => {
 
       res.cookie("token", token, {
         maxAge: 7200,
-        // httpOnly: true,
+        httpOnly: true,
       });
       req.cookies.token;
       res.json(token);
