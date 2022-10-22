@@ -110,7 +110,7 @@ const profile = async (req: Request, res: Response) => {
     const customer = await store.getCustomerWithId(
       getCustomer.customer_id as number
     );
-    console.log(getCustomer.customer_id);
+
     if (customer != null) res.json(customer);
     else res.json("No user found with that ID");
   } catch (error) {
@@ -120,7 +120,7 @@ const profile = async (req: Request, res: Response) => {
 
 const customer_route = (app: express.Application) => {
   app.get("/customers", checkAuth, auth.adminRole, getAllCustomers);
-  app.get("/customer/:id", checkAuth, auth.adminRole, getCustomerWithId);
+  app.get("/customer/:id", checkAuth, getCustomerWithId);
   app.post("/customer", createCustomer);
   app.post("/auth/customer", authenticate);
   app.get("/profile", checkAuth, profile);

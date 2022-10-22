@@ -37,6 +37,22 @@ export class products {
       throw new Error(`Could not retrive product: ${err}`);
     }
   }
+  //get latest 3 products
+  async latestProducts(): Promise<product[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT * FROM product order by created_at DESC LIMIT 3";
+      const result = await conn.query(sql);
+      //close the connection
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive product: ${err}`);
+    }
+  }
+
   //get specific product
   async getProductWithId(product_id: number): Promise<product> {
     try {

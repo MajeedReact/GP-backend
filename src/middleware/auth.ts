@@ -7,6 +7,7 @@ dotenv.config();
 
 const checkAuth = (req: Request, res: Response, next: Function) => {
   const token = req.cookies.token;
+  console.log(token);
   try {
     //if there is no token
     if (!token) {

@@ -12,19 +12,27 @@ const auth = new authorization();
 
 const getAllProducts = async (_req: Request, res: Response) => {
   try {
-    const allCategories = await store.getAllProducts();
-    res.json(allCategories);
+    const products = await store.getAllProducts();
+    res.json(products);
   } catch (err) {
     throw new Error(`An Error occured retriving products: ${err}`);
   }
 };
 
+const getLatestProducts = async (_req: Request, res: Response) => {
+  try {
+    const latestProducts = await store.latestProducts();
+    res.json(latestProducts);
+  } catch (err) {
+    throw new Error(`An Error occured retriving products: ${err}`);
+  }
+};
 const getProductWithId = async (req: Request, res: Response) => {
   try {
-    const allCategories = await store.getProductWithId(
+    const product = await store.getProductWithId(
       req.params.id as unknown as number
     );
-    res.json(allCategories);
+    res.json(product);
   } catch (err) {
     throw new Error(
       `An Error occured retriving product with id ${req.params.id} ${err}`
@@ -77,6 +85,7 @@ const createProduct = async (req: Request, res: Response) => {
 const product_route = (app: express.Application) => {
   app.get("/product", getAllProducts);
   app.get("/product/:id", getProductWithId);
+  app.get("/new-products", getLatestProducts);
   app.post("/product", checkAuth, auth.checkSellerOrAdmin, createProduct);
   // app.delete("/product/:id", deleteCategory);
 };

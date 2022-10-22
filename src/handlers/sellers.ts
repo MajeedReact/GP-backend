@@ -31,17 +31,6 @@ const createSeller = async (req: Request, res: Response) => {
     role_id: 2,
   };
 
-  //create password exception
-  try {
-    if (sellers.seller_password.length < 8) {
-      res.json("Invalid Password");
-      throw new registerationException("invalid password");
-    }
-  } catch (error) {
-    throw new Error("An error occured " + error);
-  }
-  //end of Ecxaption
-
   try {
     const checkEmail = await store.checkEmail(sellers.seller_email);
     if (!checkEmail) {
@@ -51,18 +40,9 @@ const createSeller = async (req: Request, res: Response) => {
         expiresIn: "1d",
       });
       console.log(sellers.role_id);
-<<<<<<< HEAD
       res.json("token");
     } else res.json("an Email already exists!");
     return;
-=======
-      res.json(token);
-    } else {
-
-      res.json("an Email already exists!");
-      throw new registerationException("an Email already exists!");
-      } 
->>>>>>> 59f15fb5eb3d8fe59d856c53db622f6623efb6f2
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
   }
@@ -93,7 +73,6 @@ const authenticate = async (req: Request, res: Response) => {
     }
     res.json("Invalid Email or Password");
     throw new loginException("Invalied Email or password");
-
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }
