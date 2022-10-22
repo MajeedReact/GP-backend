@@ -14,8 +14,8 @@ export class reviewClass {
       const conn = await client.connect();
 
       //get all reviews from specfic product id by using inner join
-      const sql =
-        "SELECT * FROM review INNER JOIN product ON product.product_id = $1";
+      const sql = "SELECT * FROM review WHERE product_id = $1";
+      // "SELECT * FROM review INNER JOIN product ON product.product_id = $1";
 
       const result = await conn.query(sql, [product_id]);
 
