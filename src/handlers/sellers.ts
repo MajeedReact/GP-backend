@@ -1,8 +1,6 @@
 import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
 import { seller, sellers } from "../models/Sellers";
-import { registerationException } from "../customException/registeration/registerException";
-import { loginException } from "../customException/loginException";
 
 const store = new sellers();
 
@@ -30,7 +28,7 @@ const createSeller = async (req: Request, res: Response) => {
     shop_name: req.body.shop_name,
     role_id: 2,
   };
-
+  console.log(sellers);
   try {
     const checkEmail = await store.checkEmail(sellers.seller_email);
     if (!checkEmail) {
@@ -58,21 +56,21 @@ const authenticate = async (req: Request, res: Response) => {
         seller_id: login.seller_id,
         role_id: login.role_id,
       };
-      console.log(login.shop_name);
+
       var token = jwt.sign(loginSeller, process.env.TOKEN_SECRET as Secret, {
         expiresIn: "2h",
       });
 
       res.cookie("token", token, {
-        maxAge: 7200,
+        maxAge: 2 * 60 * 60 * 1000,
         httpOnly: true,
       });
-      req.cookies.token;
+
       res.json(token);
       return;
     }
     res.json("Invalid Email or Password");
-    throw new loginException("Invalied Email or password");
+    return;
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }

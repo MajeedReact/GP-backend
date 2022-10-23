@@ -41,12 +41,13 @@ const insertReview = async (req: Request, res: Response) => {
     //cheeck if the user already posted a review or not
     var token = req.cookies.token;
     var decode = jwt.decode(token) as customer;
-
+    console.log(decode.cus_first_name);
     const reviewObject: review = {
       description: req.body.description,
       rating: req.body.rating,
       product_id: req.body.product_id,
       customer_id: decode.customer_id as unknown as number,
+      cus_first_name: decode.cus_first_name,
     };
 
     //check if the user bought the product or not
@@ -60,25 +61,6 @@ const insertReview = async (req: Request, res: Response) => {
       reviewObject.product_id
     );
 
-    //
-    // if (result) {
-    //   if (checkDuplicate) {
-    //     const postReview = store.insertReview(reviewObject);
-    //     res.status(200).json(postReview);
-
-    //     return;
-    //   } else {
-    //     res.json("You already posted a review");
-    //     return;
-    //   }
-    // } else {
-    //   res
-    //     .status(401)
-    //     .json(
-    //       "You cannot submit reviews because you have not bought this product!"
-    //     );
-    //   return;
-    // }
     //if the user bought the product
     if (!result) {
       res.status(403).json("You have not bought the product");

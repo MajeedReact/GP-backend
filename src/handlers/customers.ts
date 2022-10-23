@@ -3,8 +3,6 @@ import { customer, customers } from "../models/customers";
 import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
-import { registerationException } from "../customException/registeration/registerException";
-import { loginException } from "../customException/loginException";
 
 const store = new customers();
 const auth = new authorization();
@@ -38,17 +36,6 @@ const createCustomer = async (req: Request, res: Response) => {
     role_id: 1,
   };
 
-  // //create password exception
-  // try {
-  //   if (customer.customer_password.length < 8) {
-  //     res.json("Invalid Password");
-  //     throw new InvalidPassword("invalid password");
-  //   }
-  // } catch (error) {
-  //   throw new Error("An error occured " + error);
-  // }
-  // //end of Ecxaption
-
   //email check
   try {
     const checkEmail = await store.checkEmail(customer.customer_email);
@@ -74,7 +61,7 @@ const authenticate = async (req: Request, res: Response) => {
     const login = await store.loginCustomer(req.body.email, req.body.password);
     if (login != null) {
       const loginCustomer = {
-        cus_first_eame: login.cus_first_name,
+        cus_first_name: login.cus_first_name,
         customer_email: login.customer_email,
         customer_id: login.customer_id,
         role_id: login.role_id,
@@ -86,7 +73,7 @@ const authenticate = async (req: Request, res: Response) => {
 
       res.cookie("token", token, {
         maxAge: 2 * 60 * 60 * 1000,
-        // httpOnly: true,
+        httpOnly: true,
       });
       req.cookies.token;
       res.json(token);

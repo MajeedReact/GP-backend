@@ -2,10 +2,11 @@ import client from "../database";
 
 export type review = {
   review_id?: number;
-  description: String;
+  description: string;
   rating: number;
   product_id: number;
   customer_id: number;
+  cus_first_name: string;
 };
 
 export class reviewClass {
@@ -15,7 +16,6 @@ export class reviewClass {
 
       //get all reviews from specfic product id by using inner join
       const sql = "SELECT * FROM review WHERE product_id = $1";
-      // "SELECT * FROM review INNER JOIN product ON product.product_id = $1";
 
       const result = await conn.query(sql, [product_id]);
 
@@ -49,13 +49,14 @@ export class reviewClass {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO review (description, rating, product_id, customer_id) VALUES($1, $2, $3, $4) RETURNING *";
+        "INSERT INTO review (description, rating, product_id, customer_id, cus_first_name) VALUES($1, $2, $3, $4, $5) RETURNING *";
 
       const result = await conn.query(sql, [
         r.description,
         r.rating,
         r.product_id,
         r.customer_id,
+        r.cus_first_name,
       ]);
       conn.release();
       return result.rows[0];
