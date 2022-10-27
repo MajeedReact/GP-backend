@@ -22,7 +22,7 @@ export type product_image = {
   product_id: number;
 };
 export class products {
-  async getAllProductsFromSeller(sellerID:number) {
+  async getAllProductsFromSeller(sellerID: number) {
     try {
       const conn = await client.connect();
 
@@ -89,7 +89,7 @@ export class products {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO product (product_name, product_quantity, product_description, price, tags, lat, lan, city, neighborhood, seller_id, category_id) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11)";
+        "INSERT INTO product (product_name, product_quantity, product_description, price, tags, lat, lan, city, neighborhood, seller_id, category_id) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *";
       const result = await conn.query(sql, [
         p.product_name,
         p.product_quantity,

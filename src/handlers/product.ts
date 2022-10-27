@@ -21,13 +21,14 @@ const getAllProducts = async (_req: Request, res: Response) => {
 
 const getAllProductsFromSeller = async (req: Request, res: Response) => {
   try {
-    const products = await store.getAllProductsFromSeller(req.params.id as unknown as number);
+    const products = await store.getAllProductsFromSeller(
+      req.params.id as unknown as number
+    );
     res.json(products);
   } catch (err) {
     throw new Error(`An Error occured retriving products: ${err}`);
   }
 };
-
 
 const getLatestProducts = async (_req: Request, res: Response) => {
   try {
@@ -56,18 +57,19 @@ const createProduct = async (req: Request, res: Response) => {
   var sellerID = jwt.decode(token) as seller;
 
   const products: product = {
-    product_name: req.body.pName,
-    product_quantity: req.body.pQuantity,
-    product_description: req.body.pDescription,
-    tags: req.body.pTag,
+    product_name: req.body.product_name,
+    product_quantity: req.body.product_quantity,
+    product_description: req.body.product_description,
+    tags: req.body.tags,
     price: req.body.price,
     lat: req.body.lat,
     lan: req.body.lan,
     city: req.body.city,
-    neighborhood: req.body.neighboor,
+    neighborhood: req.body.neighborhood,
     seller_id: sellerID.seller_id as number,
-    category_id: 2,
+    category_id: req.body.category_id as number,
   };
+  console.log(products);
 
   try {
     const newProduct = await store.createProduct(products);
