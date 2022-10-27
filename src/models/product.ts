@@ -22,6 +22,20 @@ export type product_image = {
   product_id: number;
 };
 export class products {
+  async getAllProductsFromSeller(sellerID:number) {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT * FROM product WHERE seller_id = $1";
+      const result = await conn.query(sql, [sellerID]);
+      //close the connection
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive product: ${err}`);
+    }
+  }
   //get all product
   async getAllProducts(): Promise<product[]> {
     try {

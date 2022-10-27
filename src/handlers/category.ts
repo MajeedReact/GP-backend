@@ -21,7 +21,7 @@ const getProductByCategory = async (req: Request, res: Response) => {
       req.params.id as unknown as number
     );
 
-    console.log(validCategory);
+    // console.log(validCategory);
     if (validCategory) {
       const allCategories = await store.getProductByCategory(
         req.params.id as unknown as number
@@ -65,7 +65,7 @@ const deleteCategory = async (req: Request, res: Response) => {
 const category_route = (app: express.Application) => {
   app.get("/categories", getAllCategories);
   app.get("/products/category=:id", getProductByCategory);
-  // app.get("/sellers/:id", getSellerWithId);
+
   app.post("/category", checkAuth, authorziation.adminRole, createCategory);
   app.delete(
     "/category/:id",

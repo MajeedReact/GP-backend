@@ -63,7 +63,7 @@ const authenticate = async (req: Request, res: Response) => {
 
       res.cookie("token", token, {
         maxAge: 2 * 60 * 60 * 1000,
-        httpOnly: true,
+        // httpOnly: true,
       });
 
       res.json(token);

@@ -19,6 +19,16 @@ const getAllProducts = async (_req: Request, res: Response) => {
   }
 };
 
+const getAllProductsFromSeller = async (req: Request, res: Response) => {
+  try {
+    const products = await store.getAllProductsFromSeller(req.params.id as unknown as number);
+    res.json(products);
+  } catch (err) {
+    throw new Error(`An Error occured retriving products: ${err}`);
+  }
+};
+
+
 const getLatestProducts = async (_req: Request, res: Response) => {
   try {
     const latestProducts = await store.latestProducts();
@@ -86,6 +96,7 @@ const product_route = (app: express.Application) => {
   app.get("/product", getAllProducts);
   app.get("/product/:id", getProductWithId);
   app.get("/new-products", getLatestProducts);
+  app.get("/products/seller/:id", getAllProductsFromSeller);
   app.post("/product", checkAuth, auth.checkSellerOrAdmin, createProduct);
   // app.delete("/product/:id", deleteCategory);
 };
