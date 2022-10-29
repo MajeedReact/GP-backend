@@ -16,6 +16,17 @@ const getNumberOfCustomersEachMonth = async (req_: Request, res: Response) => {
   }
 };
 
+const getTotalCustomer = async (req_: Request, res: Response) => {
+  try {
+    const result = await store.getTotalCustomer();
+    res.status(200).json(result);
+  } catch (error) {
+    throw new Error(
+      "An Error occured while retriving number of customer each month" + error
+    );
+  }
+};
+
 const numberOfCustomerLast7Days = async (req_: Request, res: Response) => {
   try {
     const result = await store.numberOfCustomerLast7Days();
@@ -110,6 +121,7 @@ const dashboardAdmin_route = (app: express.Application) => {
     auth.adminRole,
     getNumberOfCustomersEachMonth
   );
+  app.get("/totalCustomer", checkAuth, auth.adminRole, getTotalCustomer);
   app.get(
     "/customerLast7Days",
     checkAuth,

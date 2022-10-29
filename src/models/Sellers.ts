@@ -16,6 +16,37 @@ export type seller = {
 };
 
 export class sellers {
+  async deleteSeller(id: number): Promise<seller[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "DELETE FROM seller WHERE seller_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive customers ${error}`);
+    }
+  }
+  async checkShopName(shop_name: string): Promise<boolean> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT shop_name FROM seller WHERE shop_name = $1";
+      const result = await conn.query(sql, [shop_name]);
+      //close the connection
+      conn.release();
+
+      if (result.rows.length) return true;
+
+      return false;
+    } catch (err) {
+      throw new Error(`Could not retrive roles: ${err}`);
+    }
+  }
   //for admins only
   async getAllSeller(): Promise<seller[]> {
     try {

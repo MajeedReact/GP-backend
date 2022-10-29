@@ -3,13 +3,16 @@ import { customer, customers } from "../models/customers";
 import jwt, { Secret } from "jsonwebtoken";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
+import { body, validationResult } from "express-validator";
+import { checkEmailAndPassword } from "../middleware/validation";
+import { createAccountValidation } from "../validationSchema/createAccount";
 
 const store = new customers();
 const auth = new authorization();
 
 require("dotenv").config();
 
-const getAllCustomers = async (res: Response) => {
+const getAllCustomers = async (req: Request, res: Response) => {
   try {
     const allCustomers = await store.getAllCustomers();
     res.json(allCustomers);
@@ -29,10 +32,10 @@ const getCustomerWithId = async (req: Request, res: Response) => {
 //customer creation
 const createCustomer = async (req: Request, res: Response) => {
   const customer: customer = {
-    customer_email: req.body.customer_email,
+    customer_email: req.body.email,
     cus_first_name: req.body.cus_first_name,
     cus_last_name: req.body.cus_last_name,
-    customer_password: req.body.customer_password,
+    customer_password: req.body.password,
     role_id: 1,
   };
 
@@ -105,13 +108,30 @@ const profile = async (req: Request, res: Response) => {
   }
 };
 
+const deleteCustomer = async (req: Request, res: Response) => {
+  try {
+    const allCustomers = await store.deleteCustomer(
+      req.params.id as unknown as number
+    );
+    res.json(allCustomers);
+  } catch (err) {
+    throw new Error(`An Error occured retriving customers: ${err}`);
+  }
+};
+
 const customer_route = (app: express.Application) => {
   app.get("/customers", checkAuth, auth.adminRole, getAllCustomers);
   app.get("/customer/:id", checkAuth, getCustomerWithId);
-  app.post("/customer", createCustomer);
+  app.post(
+    "/customer",
+    createAccountValidation,
+    checkEmailAndPassword,
+    createCustomer
+  );
   app.post("/auth/customer", authenticate);
   app.get("/profile", checkAuth, profile);
   app.post("/logout", logout);
+  app.delete("/customer/delete/:id", checkAuth, auth.adminRole, deleteCustomer);
 };
 
 export default customer_route;

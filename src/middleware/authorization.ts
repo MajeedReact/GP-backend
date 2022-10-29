@@ -3,17 +3,12 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import { customer } from "../models/customers";
 
 export class authorization {
-  // getTokenAndDecode(req: Request, res: Response){
-  //   var token = req.cookies.token;
-  //   var decode = jwt.decode(token) as customer;
-  // }
   //posting product
   checkSellerOrAdmin(req: Request, res: Response, next: Function) {
     try {
       var token = req.cookies.token;
       var result = jwt.decode(token) as customer;
-      //
-      console.log(result.role_id);
+
       if (result.role_id == 2 || result.role_id == 3) {
         next();
       } else {
@@ -29,8 +24,7 @@ export class authorization {
   adminRole(req: Request, res: Response, next: Function) {
     var token = req.cookies.token;
     var result = jwt.decode(token) as customer;
-    //
-    console.log(result.role_id);
+
     if (result.role_id == 3) {
       next();
     } else {

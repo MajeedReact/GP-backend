@@ -20,6 +20,23 @@ export default class dashboardAdmin {
       );
     }
   }
+  async getTotalCustomer(): Promise<number> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "select COUNT(*) from customer";
+      const result = await conn.query(sql);
+
+      conn.release();
+
+      return result.rows[0];
+    } catch (error) {
+      throw new Error(
+        "An Error occured while retriving number of customers each month " +
+          error
+      );
+    }
+  }
 
   async numberOfCustomerLast7Days() {
     try {
@@ -79,7 +96,7 @@ export default class dashboardAdmin {
       );
     }
   }
-//number of order each mounth
+  //number of order each mounth
   async getNumberOfOrdersEachMonth() {
     try {
       const conn = await client.connect();
@@ -133,7 +150,8 @@ export default class dashboardAdmin {
       return result.rows;
     } catch (error) {
       throw new Error(
-        "An Error occured while retriving number of products each month " + error
+        "An Error occured while retriving number of products each month " +
+          error
       );
     }
   }
@@ -163,8 +181,8 @@ export default class dashboardAdmin {
       const conn = await client.connect();
 
       const sql =
-        "SELECT product_id, COUNT(product_id) from orders_details GROUP BY product_id HAVING COUNT(product_id) > 1 ORDER BY COUNT DESC LIMIT 5;"
-        
+        "SELECT product_id, COUNT(product_id) from orders_details GROUP BY product_id HAVING COUNT(product_id) > 1 ORDER BY COUNT DESC LIMIT 5;";
+
       const result = await conn.query(sql);
 
       conn.release();
@@ -172,8 +190,7 @@ export default class dashboardAdmin {
       return result.rows;
     } catch (error) {
       throw new Error(
-        "An Error occured while retriving most ordered products " +
-          error
+        "An Error occured while retriving most ordered products " + error
       );
     }
   }

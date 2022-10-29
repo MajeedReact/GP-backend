@@ -1,8 +1,13 @@
 import express, { Request, Response } from "express";
 import jwt, { Secret } from "jsonwebtoken";
+import { authorization } from "../middleware/authorization";
+import checkAuth from "../middleware/auth";
+import { checkEmailAndPassword } from "../middleware/validation";
 import { seller, sellers } from "../models/Sellers";
+import { createAccountValidation } from "../validationSchema/createAccount";
 
 const store = new sellers();
+const auth = new authorization();
 
 const getAllSellers = async (_req: Request, res: Response) => {
   try {
@@ -23,13 +28,18 @@ const getSellerWithId = async (req: Request, res: Response) => {
 
 const createSeller = async (req: Request, res: Response) => {
   const sellers: seller = {
-    seller_email: req.body.seller_email,
-    seller_password: req.body.seller_password,
+    seller_email: req.body.email,
+    seller_password: req.body.password,
     shop_name: req.body.shop_name,
     role_id: 2,
   };
-  console.log(sellers);
+
   try {
+    //check shop name
+    const shopNameCheck = await store.checkShopName(sellers.shop_name);
+    if (shopNameCheck) {
+      return res.status(400).json("Shop name already exists");
+    }
     const checkEmail = await store.checkEmail(sellers.seller_email);
     if (!checkEmail) {
       const newSeller = await store.createSeller(sellers);
@@ -39,7 +49,7 @@ const createSeller = async (req: Request, res: Response) => {
       });
       console.log(sellers.role_id);
       res.json("token");
-    } else res.json("an Email already exists!");
+    } else res.status(400).json("an Email already exists!");
     return;
   } catch (err) {
     throw new Error("An error occured while creating the account " + err);
@@ -69,17 +79,33 @@ const authenticate = async (req: Request, res: Response) => {
       res.json(token);
       return;
     }
-    res.json("Invalid Email or Password");
+    res.status(400).json("Invalid Email or Password");
     return;
   } catch (error) {
     throw new Error("An Error occured while logging in" + error);
   }
 };
+const deleteSeller = async (req: Request, res: Response) => {
+  try {
+    const allCustomers = await store.deleteSeller(
+      req.params.id as unknown as number
+    );
+    res.json(allCustomers);
+  } catch (err) {
+    throw new Error(`An Error occured retriving customers: ${err}`);
+  }
+};
 const seller_route = (app: express.Application) => {
-  app.get("/sellers", getAllSellers);
+  app.get("/sellers", checkAuth, auth.adminRole, getAllSellers);
   app.get("/sellers/:id", getSellerWithId);
-  app.post("/sellers", createSeller);
+  app.post(
+    "/sellers",
+    createAccountValidation,
+    checkEmailAndPassword,
+    createSeller
+  );
   app.post("/auth/seller", authenticate);
+  app.delete("/seller/delete/:id", checkAuth, auth.adminRole, deleteSeller);
 };
 
 export default seller_route;
