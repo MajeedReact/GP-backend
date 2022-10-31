@@ -129,7 +129,7 @@ export class customers {
       const conn = await client.connect();
 
       const sql =
-        "SELECT customer_email FROM customer WHERE customer_email = $1";
+        "SELECT customer_email FROM customer WHERE customer_email iLike $1";
       const result = await conn.query(sql, [email]);
 
       //close connection

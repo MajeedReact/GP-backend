@@ -6,6 +6,7 @@ import { authorization } from "../middleware/authorization";
 import { body, validationResult } from "express-validator";
 import { checkEmailAndPassword } from "../middleware/validation";
 import { createAccountValidation } from "../validationSchema/createAccount";
+import { customerValidation } from "../validationSchema/customerValidation";
 
 const store = new customers();
 const auth = new authorization();
@@ -124,7 +125,9 @@ const customer_route = (app: express.Application) => {
   app.get("/customer/:id", checkAuth, getCustomerWithId);
   app.post(
     "/customer",
+    customerValidation,
     createAccountValidation,
+
     checkEmailAndPassword,
     createCustomer
   );

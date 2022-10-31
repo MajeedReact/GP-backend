@@ -18,6 +18,36 @@ export type order_details = {
 };
 
 export class orders {
+  async deleteOrder(id: number): Promise<order[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "DELETE FROM orders where order_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive orders ${error}`);
+    }
+  }
+  async deleteOrderDetails(id: number): Promise<order[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "DELETE FROM orders_details where order_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive orders ${error}`);
+    }
+  }
   async getAllOrders(): Promise<order[]> {
     try {
       const conn = await client.connect();
@@ -179,4 +209,19 @@ export class orders {
     }
   }
   async cancelOrder(s: order) {}
+
+  async getOrderID(id: number): Promise<order> {
+    try {
+      const conn = await client.connect();
+      const sql = "SELECT * FROM orders WHERE order_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows[0];
+    } catch (error) {
+      throw new Error(`Could not update order with id ${id}: ${error}`);
+    }
+  }
 }

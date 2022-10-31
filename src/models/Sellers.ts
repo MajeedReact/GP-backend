@@ -35,7 +35,7 @@ export class sellers {
     try {
       const conn = await client.connect();
 
-      const sql = "SELECT shop_name FROM seller WHERE shop_name = $1";
+      const sql = "SELECT shop_name FROM seller WHERE shop_name iLike $1";
       const result = await conn.query(sql, [shop_name]);
       //close the connection
       conn.release();
@@ -109,7 +109,7 @@ export class sellers {
     try {
       const conn = await client.connect();
 
-      const sql = "SELECT seller_email FROM seller WHERE seller_email = $1";
+      const sql = "SELECT seller_email FROM seller WHERE seller_email iLike $1";
       const result = await conn.query(sql, [email]);
 
       //close connection

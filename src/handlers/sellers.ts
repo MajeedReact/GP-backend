@@ -5,6 +5,7 @@ import checkAuth from "../middleware/auth";
 import { checkEmailAndPassword } from "../middleware/validation";
 import { seller, sellers } from "../models/Sellers";
 import { createAccountValidation } from "../validationSchema/createAccount";
+import { sellerValidation } from "../validationSchema/sellerAccount";
 
 const store = new sellers();
 const auth = new authorization();
@@ -101,6 +102,7 @@ const seller_route = (app: express.Application) => {
   app.post(
     "/sellers",
     createAccountValidation,
+    sellerValidation,
     checkEmailAndPassword,
     createSeller
   );
