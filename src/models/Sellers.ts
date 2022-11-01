@@ -113,7 +113,7 @@ export class sellers {
       const result = await conn.query(sql, [email]);
 
       //close connection
-      conn.release;
+      conn.release();
 
       if (result.rows.length) {
         return true;

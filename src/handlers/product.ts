@@ -79,28 +79,82 @@ const createProduct = async (req: Request, res: Response) => {
   }
 };
 
-// const deleteCategory = async (req: Request, res: Response) => {
-//   try {
-//     const deleteCat = await store.deleteCategory(
-//       req.params.id as unknown as number
-//     );
-//     res.json(deleteCat);
-//   } catch (err) {
-//     throw new Error(
-//       "An error occured while deleting category with id  " +
-//         req.params.id +
-//         " " +
-//         err
-//     );
-//   }
-// };
+const deleteProduct = async (req: Request, res: Response) => {
+  try {
+    const deleteCat = await store.deleteProduct(
+      req.params.id as unknown as number
+    );
+    res.status(200).json("success");
+  } catch (err) {
+    throw new Error(
+      "An error occured while deleting product with id  " +
+        req.params.id +
+        " " +
+        err
+    );
+  }
+};
+
+const updateProduct = async (req: Request, res: Response) => {
+  //get seller id
+  var token = req.cookies.token;
+  var sellerID = jwt.decode(token) as seller;
+
+  const products: any = {
+    product_id: req.body.product_id,
+    product_name: req.body.product_name,
+    product_quantity: req.body.product_quantity,
+    product_description: req.body.product_description,
+    tags: req.body.tags,
+    price: req.body.price,
+    lat: req.body.lat,
+    lan: req.body.lan,
+    city: req.body.city,
+    neighborhood: req.body.neighborhood,
+    category_id: req.body.category_id as number,
+  };
+
+  console.log(products);
+  if (!products.product_id) {
+    return res.status(400).json("bad request");
+  }
+
+  try {
+    const newProduct = await store.updateProduct(products);
+    res.json(newProduct);
+  } catch (err) {
+    throw new Error("An error occured while creating product " + err);
+  }
+};
+const searchProduct = async (req: Request, res: Response) => {
+  try {
+    const city = req.params.city;
+    const query = req.params.query;
+
+    if (req.params.city != "all") {
+      const products = await store.searchProduct(query, city);
+
+      res.status(200).json(products);
+      return;
+    }
+
+    const products = await store.searchProductWithoutCity(query);
+
+    res.status(200).json(products);
+    return;
+  } catch (err) {
+    throw new Error(`An Error occured retriving products: ${err}`);
+  }
+};
 const product_route = (app: express.Application) => {
   app.get("/product", getAllProducts);
   app.get("/product/:id", getProductWithId);
   app.get("/new-products", getLatestProducts);
   app.get("/products/seller/:id", getAllProductsFromSeller);
+  app.get("/search/:query/:city", searchProduct);
   app.post("/product", checkAuth, auth.checkSellerOrAdmin, createProduct);
-  // app.delete("/product/:id", deleteCategory);
+  app.put("/product/:id", checkAuth, auth.checkSellerOrAdmin, updateProduct);
+  app.delete("/product/:id", checkAuth, auth.adminRole, deleteProduct);
 };
 
 export default product_route;

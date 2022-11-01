@@ -201,12 +201,15 @@ const getAllOrdersByCustomer = async (req: Request, res: Response) => {
   try {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
+    if (decode.role_id == 1 || decode.role_id == 3) {
+      const result = await store.getAllOrdersByCustomer(
+        decode.customer_id as number
+      );
 
-    const result = await store.getAllOrdersByCustomer(
-      decode.customer_id as number
-    );
-
-    res.status(200).json(result);
+      res.status(200).json(result);
+    } else {
+      return res.status(401).json("Unauthorized");
+    }
   } catch (error) {
     throw new Error("An Error occured while retriving orders " + error);
   }
