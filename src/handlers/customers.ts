@@ -127,7 +127,6 @@ const customer_route = (app: express.Application) => {
     "/customer",
     customerValidation,
     createAccountValidation,
-
     checkEmailAndPassword,
     createCustomer
   );

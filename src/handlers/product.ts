@@ -129,7 +129,8 @@ const updateProduct = async (req: Request, res: Response) => {
 const searchProduct = async (req: Request, res: Response) => {
   try {
     const city = req.params.city;
-    const query = req.params.query;
+    let query = req.params.query;
+    query = "'''" + query + "'''";
 
     if (req.params.city != "all") {
       const products = await store.searchProduct(query, city);

@@ -8,7 +8,7 @@ export class authorization {
     try {
       var token = req.cookies.token;
       var result = jwt.decode(token) as customer;
-
+      
       if (result.role_id == 2 || result.role_id == 3) {
         next();
       } else {

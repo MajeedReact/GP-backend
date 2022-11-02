@@ -42,6 +42,8 @@ const createOrder = async (req: Request, res: Response) => {
   const token = req.cookies.token;
   const decode = jwt.decode(token) as customer;
 
+  console.log(req.body[0]);
+
   //generate unique order authentication
   const uniqueID = uuidv4();
   console.log(uniqueID.substring(0, 6));
@@ -49,20 +51,20 @@ const createOrder = async (req: Request, res: Response) => {
   if (decode.role_id == 2)
     return res.status(403).json("Seller cannot buy orders");
 
-  const product = req.body.product;
+  const product = req.body;
 
   const productInfo = (await productModel.getProductWithId(
-    product[0].id as number
+    product[0].product_id as number
   )) as product;
 
   if (productInfo == undefined || productInfo == null) {
     res.status(404).json("No Seller id found");
     return;
   }
-
+  const sellerID = productInfo.seller_id;
   //check products in cart validation
   for (var item = 0; item < product.length; item++) {
-    let product_id: number = await product[item].id;
+    let product_id: number = await product[item].product_id;
     const productInfo = (await productModel.getProductWithId(
       product_id
     )) as product;
@@ -70,6 +72,14 @@ const createOrder = async (req: Request, res: Response) => {
     if (productInfo == undefined || productInfo == null) {
       res.status(404).json("No Seller id found");
       return;
+    }
+
+    if (productInfo.seller_id != sellerID) {
+      return res
+        .status(400)
+        .json(
+          "You have two different sellers within one order\n Kindly remove the products from the other seller to proceed"
+        );
     }
 
     //check product quantity
@@ -90,7 +100,7 @@ const createOrder = async (req: Request, res: Response) => {
   const insertOrder = await store.createOrder(order);
 
   for (var item = 0; item < product.length; item++) {
-    let product_id: number = await product[item].id;
+    let product_id: number = await product[item].product_id;
     const productInfo = (await productModel.getProductWithId(
       product_id
     )) as product;
@@ -165,7 +175,6 @@ const getOrderDetails = async (req: Request, res: Response) => {
   try {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
-    const decodeSeller = jwt.decode(token) as seller;
 
     //if seller or admin
     if (decode.role_id == 1 || decode.role_id == 3) {
@@ -179,17 +188,29 @@ const getOrderDetails = async (req: Request, res: Response) => {
       res.status(200).json(result);
       return;
     }
-    //if seller id/customer id equals to the seller id/customer id in order then show order_details
-    if (decodeSeller.seller_id) {
+  } catch (error) {
+    throw new Error("an Error occured while getting order details " + error);
+  }
+};
+const getOrderDetailsSeller = async (req: Request, res: Response) => {
+  try {
+    const token = req.cookies.token;
+
+    const decode = jwt.decode(token) as seller;
+
+    //if seller or admin
+    if (decode.role_id == 2 || decode.role_id == 3) {
       const result = await store.getOrderDetailSeller(
         req.params.id as unknown as number
       );
-      if (result[0].seller_id == decodeSeller.seller_id && result.length > 1) {
-        res.status(200).json(result);
+      console.log(result);
+      if (result.length >= 1) {
+        return res.status(200).json(result);
       } else {
-        res.status(403).json("Unauthorized");
-        return;
+        return res.status(404).json("Not found");
       }
+    } else {
+      res.status(400).json("Not a seller or an admin");
     }
   } catch (error) {
     throw new Error("an Error occured while getting order details " + error);
@@ -220,11 +241,12 @@ const getAllOrdersBySeller = async (req: Request, res: Response) => {
     const decode = jwt.decode(token) as seller;
     console.log(decode.role_id);
     //if role is seller
-    if (decode.role_id == 2) {
+    if (decode.role_id == 2 || decode.role_id == 3) {
       const result = await store.getAllOrdersBySeller(
         decode.seller_id as number
       );
       res.status(200).json(result);
+      return;
     } else {
       res.status(403).json("Forbidden");
       return;
@@ -237,6 +259,8 @@ const getAllOrdersBySeller = async (req: Request, res: Response) => {
 const updateOrderStatus = async (req: Request, res: Response) => {
   try {
     const order_auth = req.body.order_auth;
+    console.log(order_auth);
+
     const result = await store.updateOrder(
       req.params.id as unknown as number,
       "Complete",
@@ -244,7 +268,7 @@ const updateOrderStatus = async (req: Request, res: Response) => {
     );
 
     if (!result) {
-      res.status(403).json("order authentication is not correct");
+      res.status(403).json("Order authentication is not correct");
       return;
     }
     res.status(200).json(result);
@@ -273,6 +297,7 @@ const orders_route = (app: express.Application) => {
   app.get("/orders/customer", checkAuth, getAllOrdersByCustomer);
   app.get("/orders/seller", checkAuth, getAllOrdersBySeller);
   app.get("/orders/:id", checkAuth, getOrderDetails);
+  app.get("/seller/orders/:id", checkAuth, getOrderDetailsSeller);
   app.get("/order/:id", checkAuth, getOrderID);
   app.post("/orders/new", checkAuth, createOrder);
   app.put("/orders/:id", updateOrderStatus);

@@ -25,7 +25,6 @@ export class products {
   async searchProduct(query: string, city: string): Promise<product[]> {
     try {
       const conn = await client.connect();
-
       const sql =
         "SELECT * FROM product WHERE to_tsvector(product_name) @@ to_tsquery($1) AND to_tsvector(city) @@ to_tsquery($2);";
       const result = await conn.query(sql, [query, city]);
