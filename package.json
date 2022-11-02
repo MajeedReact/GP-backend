@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@types/uuid": "^8.3.4",
+    "actions-on-google": "^3.0.0",
     "add": "^2.0.6",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
@@ -40,8 +41,9 @@
     "cors": "^2.8.5",
     "db-migrate": "^0.11.13",
     "db-migrate-pg": "^1.2.2",
+    "dialogflow-fulfillment": "^0.6.1",
     "dotenv": "^16.0.2",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "express-validator": "^6.14.2",
     "global": "^4.4.0",
     "jasmine": "^4.4.0",
