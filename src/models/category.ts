@@ -6,6 +6,20 @@ export type category = {
 };
 
 export class categories {
+  async getCatById(id: number): Promise<category> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT * FROM category WHERE category_id = $1";
+      const result = await conn.query(sql, [id]);
+      //close the connection
+      conn.release();
+
+      return result.rows[0];
+    } catch (err) {
+      throw new Error(`Could not retrive categories: ${err}`);
+    }
+  }
   //public
   async getAllCategories(): Promise<category[]> {
     try {

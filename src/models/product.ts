@@ -22,6 +22,48 @@ export type product_image = {
   product_id: number;
 };
 export class products {
+  async searchProduct(query: string, city: string): Promise<product[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "SELECT * FROM product WHERE to_tsvector(product_name) @@ to_tsquery($1) AND to_tsvector(city) @@ to_tsquery($2);";
+      const result = await conn.query(sql, [query, city]);
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive products: ${err}`);
+    }
+  }
+  async searchProductWithoutCity(query: string): Promise<product[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "SELECT * FROM product WHERE to_tsvector(product_name) @@ to_tsquery($1);";
+      const result = await conn.query(sql, [query]);
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive product: ${err}`);
+    }
+  }
+  async deleteProduct(id: number) {
+    try {
+      const conn = await client.connect();
+
+      const sql = "DELETE FROM product WHERE product_id = $1";
+      const result = await conn.query(sql, [id]);
+      //close the connection
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive product: ${err}`);
+    }
+  }
   async getAllProductsFromSeller(sellerID: number) {
     try {
       const conn = await client.connect();
@@ -102,6 +144,34 @@ export class products {
         p.neighborhood,
         p.seller_id,
         p.category_id,
+      ]);
+      //close the connection
+      conn.release();
+
+      return result.rows[0];
+    } catch (err) {
+      throw new Error(`Could not create product: ${err}`);
+    }
+  }
+  //update product
+  async updateProduct(p: product): Promise<product> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "UPDATE product SET product_name = $1, product_quantity = $2, product_description = $3, price = $4, tags = $5, lat = $6, lan = $7, city = $8, neighborhood = $9, category_id = $10 WHERE product_id = $11";
+      const result = await conn.query(sql, [
+        p.product_name,
+        p.product_quantity,
+        p.product_description,
+        p.price,
+        p.tags,
+        p.lat,
+        p.lan,
+        p.city,
+        p.neighborhood,
+        p.category_id,
+        p.product_id,
       ]);
       //close the connection
       conn.release();

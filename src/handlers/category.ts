@@ -14,6 +14,16 @@ const getAllCategories = async (_req: Request, res: Response) => {
     throw new Error(`An Error occured retriving categories: ${err}`);
   }
 };
+const getCatById = async (req: Request, res: Response) => {
+  try {
+    const allCategories = await store.getCatById(
+      req.params.id as unknown as number
+    );
+    res.status(200).json(allCategories);
+  } catch (err) {
+    throw new Error(`An Error occured retriving categories: ${err}`);
+  }
+};
 
 const getProductByCategory = async (req: Request, res: Response) => {
   try {
@@ -64,6 +74,7 @@ const deleteCategory = async (req: Request, res: Response) => {
 };
 const category_route = (app: express.Application) => {
   app.get("/categories", getAllCategories);
+  app.get("/category/:id", getCatById);
   app.get("/products/category=:id", getProductByCategory);
 
   app.post("/category", checkAuth, authorziation.adminRole, createCategory);

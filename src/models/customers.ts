@@ -57,7 +57,7 @@ export class customers {
 
       const result = await conn.query(sql, [id]);
 
-      conn.release;
+      conn.release();
 
       //checking if there is a result
       if (result.rows.length) {
@@ -92,7 +92,7 @@ export class customers {
       ]);
 
       //close connection
-      conn.release;
+      conn.release();
 
       return result.rows[0];
     } catch (error) {
@@ -117,7 +117,7 @@ export class customers {
       ]);
 
       //close connection
-      conn.release;
+      conn.release();
 
       return result.rows[0];
     } catch (error) {
@@ -133,7 +133,7 @@ export class customers {
       const result = await conn.query(sql, [email]);
 
       //close connection
-      conn.release;
+      conn.release();
 
       if (result.rows.length) {
         return true;

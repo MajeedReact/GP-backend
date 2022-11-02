@@ -78,85 +78,84 @@ const createOrder = async (req: Request, res: Response) => {
       res.status(400).json("Invalid quantity");
       return;
     }
+  }
+  //create a new order
+  const order: order = {
+    order_status: "New",
+    customer_id: decode.customer_id as number,
+    seller_id: productInfo.seller_id,
+    order_auth: uniqueID.substring(0, 6),
+  };
 
-    //create a new order
-    const order: order = {
-      order_status: "New",
-      customer_id: decode.customer_id as number,
-      seller_id: productInfo.seller_id,
-      order_auth: uniqueID.substring(0, 6),
+  const insertOrder = await store.createOrder(order);
+
+  for (var item = 0; item < product.length; item++) {
+    let product_id: number = await product[item].id;
+    const productInfo = (await productModel.getProductWithId(
+      product_id
+    )) as product;
+    let qty: number = await product[item].qty;
+    // if (productInfo == undefined || productInfo == null) {
+    //   res.status(404).json("No Seller id found");
+    //   return;
+    // }
+
+    // //check product quantity
+    // let qty: number = await product[item].qty;
+    // if (productInfo.product_quantity < qty) {
+    //   res.json("Invalid quantity");
+    //   return;
+    // }
+
+    //minus the product quantity from ordered quantity
+    const updatedQty = (productInfo.product_quantity as number) - qty;
+
+    //update quantity of product
+    const updated = await productModel.updateQty(
+      productInfo.product_id as number,
+      updatedQty
+    );
+
+    console.log("Product id: " + product_id);
+    let order_details: order_details = {
+      order_id: insertOrder.order_id as number,
+      product_id: product_id,
+      qty: qty,
+      customer_id: decode.customer_id,
     };
 
-    const insertOrder = await store.createOrder(order);
+    let insertDetails = await store.insertOrderDetails(order_details);
+  }
 
-    for (var item = 0; item < product.length; item++) {
-      let product_id: number = await product[item].id;
-      const productInfo = (await productModel.getProductWithId(
-        product_id
-      )) as product;
-
-      // if (productInfo == undefined || productInfo == null) {
-      //   res.status(404).json("No Seller id found");
-      //   return;
-      // }
-
-      // //check product quantity
-      // let qty: number = await product[item].qty;
-      // if (productInfo.product_quantity < qty) {
-      //   res.json("Invalid quantity");
-      //   return;
-      // }
-
-      //minus the product quantity from ordered quantity
-      const updatedQty = (productInfo.product_quantity as number) - qty;
-
-      //update quantity of product
-      const updated = await productModel.updateQty(
-        productInfo.product_id as number,
-        updatedQty
-      );
-
-      console.log("Product id: " + product_id);
-      let order_details: order_details = {
-        order_id: insertOrder.order_id as number,
-        product_id: product_id,
-        qty: qty,
-        customer_id: decode.customer_id,
-      };
-
-      let insertDetails = await store.insertOrderDetails(order_details);
-    }
+  try {
+    //get seller information so we can use it to send an email to it
+    const getSellerInfo = await sellerOrder.getSellerWithId(
+      productInfo.seller_id
+    );
+    const sellerEmail = getSellerInfo.seller_email;
+    console.log(sellerEmail);
+    console.log(decode.customer_email);
 
     try {
-      //get seller information so we can use it to send an email to it
-      const getSellerInfo = await sellerOrder.getSellerWithId(
-        productInfo.seller_id
+      //send email to customer
+      emailService.emailTo(
+        decode.customer_email,
+        "New Order",
+        `Thank you for shopping with us, a new order was created your order ID is ${insertOrder.order_id}`
       );
-      const sellerEmail = getSellerInfo.seller_email;
-      console.log(sellerEmail);
-      console.log(decode.customer_email);
-
-      try {
-        //send email to customer
-        emailService.emailTo(
-          decode.customer_email,
-          "New Order",
-          `Thank you for shopping with us, a new order was created your order ID is ${insertOrder.order_id}`
-        );
-        //send email
-        emailService.emailTo(
-          sellerEmail,
-          "New Order",
-          `A customer have purchased products from you, a new order was created your order ID is ${insertOrder.order_id}`
-        );
-      } catch (error) {
-        throw new Error("An Error occured while sending " + error);
-      }
-
-      res.json(insertOrder);
+      //send email
+      emailService.emailTo(
+        sellerEmail,
+        "New Order",
+        `A customer have purchased products from you, a new order was created your order ID is ${insertOrder.order_id}`
+      );
     } catch (error) {
-      throw new Error("An Error occured while creating an order " + error);
+      throw new Error("An Error occured while sending " + error);
     }
+
+    res.json(insertOrder);
+  } catch (error) {
+    throw new Error("An Error occured while creating an order " + error);
   }
 };
 
@@ -201,12 +200,15 @@ const getAllOrdersByCustomer = async (req: Request, res: Response) => {
   try {
     const token = req.cookies.token;
     const decode = jwt.decode(token) as customer;
+    if (decode.role_id == 1 || decode.role_id == 3) {
+      const result = await store.getAllOrdersByCustomer(
+        decode.customer_id as number
+      );
 
-    const result = await store.getAllOrdersByCustomer(
-      decode.customer_id as number
-    );
-
-    res.status(200).json(result);
+      res.status(200).json(result);
+    } else {
+      return res.status(401).json("Unauthorized");
+    }
   } catch (error) {
     throw new Error("An Error occured while retriving orders " + error);
   }
