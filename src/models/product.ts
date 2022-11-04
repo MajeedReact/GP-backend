@@ -3,6 +3,7 @@ import client from "../database";
 export type product = {
   product_id?: number;
   product_name: string;
+  product_thumbnail: string;
   product_quantity: number;
   product_description: string;
   tags: string;
@@ -124,13 +125,34 @@ export class products {
     }
   }
 
+  async recommendedProducts(
+    device: number,
+    price: number,
+    type: string
+  ): Promise<product[]> {
+    try {
+      const conn = await client.connect();
+      console.log(type + " from db");
+
+      const sql =
+        "SELECT * FROM PRODUCT WHERE category_id = $1 AND PRICE <= $2 AND tags iLike $3 ORDER BY PRICE DESC;";
+      const result = await conn.query(sql, [device, price, type]);
+      //close the connection
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive products: ${err}`);
+    }
+  }
+
   //create product
   async createProduct(p: product): Promise<product> {
     try {
       const conn = await client.connect();
 
       const sql =
-        "INSERT INTO product (product_name, product_quantity, product_description, price, tags, lat, lan, city, neighborhood, seller_id, category_id) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *";
+        "INSERT INTO product (product_name, product_quantity, product_description, price, tags, lat, lan, city, neighborhood, seller_id, category_id, product_thumbnail) VALUES ($1, $2,$3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *";
       const result = await conn.query(sql, [
         p.product_name,
         p.product_quantity,
@@ -143,6 +165,7 @@ export class products {
         p.neighborhood,
         p.seller_id,
         p.category_id,
+        p.product_thumbnail,
       ]);
       //close the connection
       conn.release();
@@ -153,7 +176,7 @@ export class products {
     }
   }
   //update product
-  async updateProduct(p: product): Promise<product> {
+  async updateProductWithoutImage(p: product): Promise<product> {
     try {
       const conn = await client.connect();
 
@@ -170,6 +193,34 @@ export class products {
         p.city,
         p.neighborhood,
         p.category_id,
+        p.product_id,
+      ]);
+      //close the connection
+      conn.release();
+
+      return result.rows[0];
+    } catch (err) {
+      throw new Error(`Could not create product: ${err}`);
+    }
+  }
+  async updateProduct(p: product): Promise<product> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "UPDATE product SET product_name = $1, product_quantity = $2, product_description = $3, price = $4, tags = $5, lat = $6, lan = $7, city = $8, neighborhood = $9, category_id = $10, product_thumbnail = $11 WHERE product_id = $12";
+      const result = await conn.query(sql, [
+        p.product_name,
+        p.product_quantity,
+        p.product_description,
+        p.price,
+        p.tags,
+        p.lat,
+        p.lan,
+        p.city,
+        p.neighborhood,
+        p.category_id,
+        p.product_thumbnail,
         p.product_id,
       ]);
       //close the connection

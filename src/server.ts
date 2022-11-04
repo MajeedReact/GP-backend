@@ -1,4 +1,4 @@
-import express, { Request, response, Response } from "express";
+import express, { Request, Response } from "express";
 import roles_route from "./handlers/roles";
 import admin_route from "./handlers/admins";
 import seller_route from "./handlers/sellers";
@@ -15,42 +15,37 @@ import memory_route from "./services/compatibility/handlers/memory";
 import motherboard_route from "./services/compatibility/handlers/motherboard";
 import dashboardAdmin_route from "./dashboard/admin/handler/dashboard";
 import dashboardSeller_route from "./dashboard/seller/handler/dashboard";
+import { products } from "./models/product";
 
 const app: express.Application = express();
 const port: string = "3000";
 
-
-
-
-
+const store = new products();
 //dialogflow
-const {WebhookClient} = require('dialogflow-fulfillment')
+const { WebhookClient } = require("dialogflow-fulfillment");
 //app.use(express.json())
-app.use('/webhook', (req, res) => {
+app.use("/webhook", (req, res) => {
   // get agent from request
-  let agent = new WebhookClient({req: Request, res: Response})
+  let agent = new WebhookClient({ req: Request, res: Response });
   //create intentMap for handel intent
   let intentMap = new Map();
   // add intent map 2nd parameter pass function
-  intentMap.set('backend',handleWebHookIntent)
+  intentMap.set("backend", handleWebHookIntent);
   // now agent is handle request and pass intent map
-  agent.handleRequest(intentMap)
+  agent.handleRequest(intentMap);
 });
 
 //function handleWebHookIntent(agent:any){ //i add :any to it to solve the problem
-  // function handleWebHookIntent(agent: { add: (arg0: string) => void; }){ //this auto fix
-     function handleWebHookIntent(agent:any){
-      agent.add("Hello I am Webhook demo How are you...")
- 
-  };
+// function handleWebHookIntent(agent: { add: (arg0: string) => void; }){ //this auto fix
+function handleWebHookIntent(agent: any) {
+  agent.add("Hello I am Webhook demo How are you...");
+}
 
-  //end of dialogflow
-  
+//end of dialogflow
 
 // app.get('/', (req, res) => {
 //   res.send("Server Is Working......")
 // })
-
 
 // //so any website can use this API and not get blocked by CORS
 // app.use(function (req, res, next) {
@@ -66,47 +61,86 @@ app.use('/webhook', (req, res) => {
 //second testing for df
 //require('./routes/df-routes')(app)
 
-
 //end of second testing
 
 //thired tsting df
-app.use(express.urlencoded({
-  extended:true
-}));
-app.use(express.json())
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.json());
 
-  app.post('/chat-bot', (req, res) => {
-// console.log(req.body);
-// res.send({ fulfillmentText: 'Hello from the webhook.'});
-    //console.log(JSON.stringify(req.body.queryResult.outputContexts));
+app.post("/chat-bot", async (req, res) => {
+  // console.log(req.body);
+  // res.send({ fulfillmentText: 'Hello from the webhook.'});
+  //console.log(JSON.stringify(req.body.queryResult.outputContexts));
 
-    let session = req.body.session;
+  let session = req.body.session;
 
-    // Any logic
+  // Any logic
 
-    let context_name = `${session}/contexts/DWI`;
-    // let place = `${session}/contexts/await_first`;
-    // let type = `${session}/contexts/await_first`;
-    // let price = `${session}/contexts/await_first`;
-console.log(req.body.queryResult.parameters);
+  let context_name = `${session}/contexts/DWI`;
+  // let place = `${session}/contexts/await_first`;
+  // let type = `${session}/contexts/await_first`;
+  // let price = `${session}/contexts/await_first`;
+  console.log(req.body.queryResult.parameters);
+  const result = req.body.queryResult.parameters;
+  let device: string = result.device;
+  let type = result.type;
+  const price = result.price;
+
+  if (device != "" && type != "" && price != "") {
+    if (device.toLocaleLowerCase().includes("pc")) {
+      device = "5";
+    } else if (device.toLocaleLowerCase().includes("laptop")) {
+      device = "6";
+    }
+    type = `%${type}%`;
+    const result = await store.recommendedProducts(
+      device as unknown as number,
+      price,
+      type
+    );
+    console.log(result);
+    if (result.length > 0) {
+      const links = [];
+      for (let i = 0; i < result.length; i++) {
+        links[i] = `http://localhost:4200/products/${result[i].product_id}\n`;
+      }
+      // let response = JSON.stringify(links);
+
+      let response = links.join(",");
+      response = response.replace(",", " ");
+      res.send({
+        fulfillmentText: `Great, we found a device that fits your needs: ${response}`,
+      });
+    } else {
+      res.send({
+        fulfillmentText: `Unfortunately we did not find a device in our database that fits your needs at the moment, check back later on!`,
+      });
+    }
+  } else {
     res.send({
-        fulfillmentText: 'HI,welcome to CCB Chatbot assistant i am here to help you choose best device based on you answer do you want to start? backend',
-           outputContexts: [
-            {
-              name: context_name,
-                // place_par: place,
-                // type_par: type,
-                // price_par: price,
-                lifespanCount: 1,
-                parameters: {
-                  name:'moh'
-                  // place_par: 'laptoop',
-                  // type_par: 'gamming',
-                  // price_par: '3000'
-                }
-            }
-        ]
+      fulfillmentText:
+        "Hi, Welcome to CCB Chatbot recommendation I am here to help you choose best device based on your answers do you want to start? backend",
+      outputContexts: [
+        {
+          name: context_name,
+          // place_par: place,
+          // type_par: type,
+          // price_par: price,
+          lifespanCount: 1,
+          parameters: {
+            name: "moh",
+            // place_par: 'laptoop',
+            // type_par: 'gamming',
+            // price_par: '3000'
+          },
+        },
+      ],
     });
+  }
 });
 //end of thired testing
 

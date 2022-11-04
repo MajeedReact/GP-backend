@@ -60,6 +60,7 @@ const createProduct = async (req: Request, res: Response) => {
     product_name: req.body.product_name,
     product_quantity: req.body.product_quantity,
     product_description: req.body.product_description,
+    product_thumbnail: req.body.product_thumbnail,
     tags: req.body.tags,
     price: req.body.price,
     lat: req.body.lat,
@@ -103,6 +104,7 @@ const updateProduct = async (req: Request, res: Response) => {
   const products: any = {
     product_id: req.body.product_id,
     product_name: req.body.product_name,
+    product_thumbnail: req.body.product_thumbnail,
     product_quantity: req.body.product_quantity,
     product_description: req.body.product_description,
     tags: req.body.tags,
@@ -120,8 +122,13 @@ const updateProduct = async (req: Request, res: Response) => {
   }
 
   try {
-    const newProduct = await store.updateProduct(products);
-    res.json(newProduct);
+    if (products.product_thumbnail != "") {
+      const newProduct = await store.updateProduct(products);
+      res.json(newProduct);
+    } else {
+      const newProduct = await store.updateProductWithoutImage(products);
+      res.json(newProduct);
+    }
   } catch (err) {
     throw new Error("An error occured while creating product " + err);
   }
