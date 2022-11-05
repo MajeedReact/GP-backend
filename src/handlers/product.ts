@@ -154,11 +154,21 @@ const searchProduct = async (req: Request, res: Response) => {
     throw new Error(`An Error occured retriving products: ${err}`);
   }
 };
+const getCities = async (req: Request, res: Response) => {
+  try {
+    const cities = await store.getCities();
+
+    res.status(200).json(cities);
+  } catch (err) {
+    throw new Error(`An Error occured retriving products: ${err}`);
+  }
+};
 const product_route = (app: express.Application) => {
   app.get("/product", getAllProducts);
   app.get("/product/:id", getProductWithId);
   app.get("/new-products", getLatestProducts);
   app.get("/products/seller/:id", getAllProductsFromSeller);
+  app.get("/cities", getCities);
   app.get("/search/:query/:city", searchProduct);
   app.post("/product", checkAuth, auth.checkSellerOrAdmin, createProduct);
   app.put("/product/:id", checkAuth, auth.checkSellerOrAdmin, updateProduct);

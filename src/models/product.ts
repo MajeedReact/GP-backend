@@ -175,6 +175,21 @@ export class products {
       throw new Error(`Could not create product: ${err}`);
     }
   }
+
+  async getCities(): Promise<string[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "SELECT DISTINCT CITY FROM PRODUCT";
+      const result = await conn.query(sql);
+      //close the connection
+      conn.release();
+
+      return result.rows;
+    } catch (err) {
+      throw new Error(`Could not retrive cities: ${err}`);
+    }
+  }
   //update product
   async updateProductWithoutImage(p: product): Promise<product> {
     try {
