@@ -6,7 +6,8 @@ import jwt, { Secret } from "jsonwebtoken";
 import { customer } from "../models/customers";
 import { seller } from "../models/Sellers";
 import { admins } from "../models/admins";
-
+import { productValidation } from "../validationSchema/productValidation";
+import { checkEmailAndPassword } from "../middleware/validation";
 const store = new products();
 const auth = new authorization();
 
@@ -170,8 +171,22 @@ const product_route = (app: express.Application) => {
   app.get("/products/seller/:id", getAllProductsFromSeller);
   app.get("/cities", getCities);
   app.get("/search/:query/:city", searchProduct);
-  app.post("/product", checkAuth, auth.checkSellerOrAdmin, createProduct);
-  app.put("/product/:id", checkAuth, auth.checkSellerOrAdmin, updateProduct);
+  app.post(
+    "/product",
+    checkAuth,
+    auth.checkSellerOrAdmin,
+    productValidation,
+    checkEmailAndPassword,
+    createProduct
+  );
+  app.put(
+    "/product/:id",
+    checkAuth,
+    auth.checkSellerOrAdmin,
+    productValidation,
+    checkEmailAndPassword,
+    updateProduct
+  );
   app.delete("/product/:id", checkAuth, auth.adminRole, deleteProduct);
 };
 

@@ -104,6 +104,31 @@ export class sellers {
       throw new Error(`Could not create seller: ${err}`);
     }
   }
+  async updateSeller(s: seller): Promise<seller> {
+    try {
+      const conn = await client.connect();
+
+      const sql =
+        "UPDATE seller set seller_email= $1, seller_password = $2,  shop_name = $3, role_id = $4 WHERE seller_id = $5";
+      const hash = bcrypt.hashSync(
+        s.seller_password + pepper,
+        Number(saltRounds)
+      );
+      const result = await conn.query(sql, [
+        s.seller_email,
+        hash,
+        s.shop_name,
+        s.role_id,
+        s.seller_id,
+      ]);
+      //close the connection
+      conn.release();
+
+      return result.rows[0];
+    } catch (err) {
+      throw new Error(`Could not create seller: ${err}`);
+    }
+  }
 
   async checkEmail(email: string): Promise<boolean | undefined> {
     try {

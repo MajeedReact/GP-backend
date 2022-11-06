@@ -5,6 +5,8 @@ import jwt, { Secret } from "jsonwebtoken";
 import { customer } from "../models/customers";
 import checkAuth from "../middleware/auth";
 import { authorization } from "../middleware/authorization";
+import { ratingValidation } from "../validationSchema/ratingValidation";
+import { checkEmailAndPassword } from "../middleware/validation";
 
 const store = new reviewClass();
 const auth = new authorization();
@@ -82,7 +84,14 @@ const insertReview = async (req: Request, res: Response) => {
 const review_route = (app: express.Application) => {
   app.get("/review/product/:id", getAllReviewByProductID);
   app.get("/review/:id", getReviewByID);
-  app.post("/review", checkAuth, auth.isCustomer, insertReview);
+  app.post(
+    "/review",
+    checkAuth,
+    auth.isCustomer,
+    ratingValidation,
+    checkEmailAndPassword,
+    insertReview
+  );
 };
 
 export default review_route;

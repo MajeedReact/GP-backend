@@ -6,6 +6,7 @@ import { checkEmailAndPassword } from "../middleware/validation";
 import { seller, sellers } from "../models/Sellers";
 import { createAccountValidation } from "../validationSchema/createAccount";
 import { sellerValidation } from "../validationSchema/sellerAccount";
+import { updateSellerValidation } from "../validationSchema/upateSeller";
 
 const store = new sellers();
 const auth = new authorization();
@@ -56,7 +57,32 @@ const createSeller = async (req: Request, res: Response) => {
     throw new Error("An error occured while creating the account " + err);
   }
 };
+const updateSeller = async (req: Request, res: Response) => {
+  const sellers: seller = {
+    seller_email: req.body.email,
+    seller_password: req.body.password,
+    shop_name: req.body.shop_name,
+    seller_id: req.params.id as unknown as number,
+    role_id: 2,
+  };
 
+  try {
+    //check shop name
+    const shopNameCheck = await store.checkShopName(sellers.shop_name);
+    if (shopNameCheck) {
+      return res.status(400).json("Shop name already exists");
+    }
+    const checkEmail = await store.checkEmail(sellers.seller_email);
+    if (!checkEmail) {
+      const newSeller = await store.updateSeller(sellers);
+
+      res.json("success");
+    } else res.status(400).json("an Email already exists!");
+    return;
+  } catch (err) {
+    throw new Error("An error occured while creating the account " + err);
+  }
+};
 const authenticate = async (req: Request, res: Response) => {
   try {
     const login = await store.loginSeller(req.body.email, req.body.password);
@@ -105,6 +131,13 @@ const seller_route = (app: express.Application) => {
     sellerValidation,
     checkEmailAndPassword,
     createSeller
+  );
+  app.put(
+    "/seller/:id",
+    updateSellerValidation,
+    sellerValidation,
+    checkEmailAndPassword,
+    updateSeller
   );
   app.post("/auth/seller", authenticate);
   app.delete("/seller/delete/:id", checkAuth, auth.adminRole, deleteSeller);
