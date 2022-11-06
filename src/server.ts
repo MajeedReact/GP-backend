@@ -123,7 +123,7 @@ app.post("/chat-bot", async (req, res) => {
   } else {
     res.send({
       fulfillmentText:
-        "Hi, Welcome to CCB Chatbot recommendation I am here to help you choose best device based on your answers do you want to start? backend",
+        "Hi, Welcome to CCB Chatbot recommendation I am here to help you choose best device based on your answers do you want to start?",
       outputContexts: [
         {
           name: context_name,
