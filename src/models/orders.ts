@@ -48,6 +48,21 @@ export class orders {
       throw new Error(`Could not retrive orders ${error}`);
     }
   }
+  async deleteProductFromOrderDetails(id: number): Promise<order[]> {
+    try {
+      const conn = await client.connect();
+
+      const sql = "DELETE FROM orders_details where product_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive orders ${error}`);
+    }
+  }
   async getAllOrders(): Promise<order[]> {
     try {
       const conn = await client.connect();

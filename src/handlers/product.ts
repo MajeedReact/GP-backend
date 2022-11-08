@@ -8,8 +8,12 @@ import { seller } from "../models/Sellers";
 import { admins } from "../models/admins";
 import { productValidation } from "../validationSchema/productValidation";
 import { checkEmailAndPassword } from "../middleware/validation";
+import { orders } from "../models/orders";
+import { reviewClass } from "../models/review";
 const store = new products();
 const auth = new authorization();
+const ordersModel = new orders();
+const reviewModel = new reviewClass();
 
 const getAllProducts = async (_req: Request, res: Response) => {
   try {
@@ -83,6 +87,8 @@ const createProduct = async (req: Request, res: Response) => {
 
 const deleteProduct = async (req: Request, res: Response) => {
   try {
+    const deleteReview = await reviewModel.deleteReviewByProductId(req.params.id as unknown as number);
+    const deleteOrderDetails = await ordersModel.deleteProductFromOrderDetails(req.params.id as unknown as number)
     const deleteCat = await store.deleteProduct(
       req.params.id as unknown as number
     );
@@ -90,9 +96,9 @@ const deleteProduct = async (req: Request, res: Response) => {
   } catch (err) {
     throw new Error(
       "An error occured while deleting product with id  " +
-        req.params.id +
-        " " +
-        err
+      req.params.id +
+      " " +
+      err
     );
   }
 };
@@ -187,7 +193,7 @@ const product_route = (app: express.Application) => {
     checkEmailAndPassword,
     updateProduct
   );
-  app.delete("/product/:id", checkAuth, auth.adminRole, deleteProduct);
+  app.delete("/product/:id", checkAuth, auth.checkSellerOrAdmin, deleteProduct);
 };
 
-export default product_route;
+export default product_route; 

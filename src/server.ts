@@ -91,6 +91,8 @@ app.post("/chat-bot", async (req, res) => {
   const price = result.price;
 
   if (device != "" && type != "" && price != "") {
+    if (device == undefined) return;
+
     if (device.toLocaleLowerCase().includes("pc")) {
       device = "5";
     } else if (device.toLocaleLowerCase().includes("laptop")) {

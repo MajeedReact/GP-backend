@@ -43,6 +43,22 @@ export class reviewClass {
       throw new Error(`Could not retrive reviews from the server ${error}`);
     }
   }
+  async deleteReviewByProductId(id: number): Promise<review[]> {
+    try {
+      const conn = await client.connect();
+
+      //get all reviews from specfic product id by using inner join
+      const sql = "DELETE FROM review WHERE product_id = $1";
+
+      const result = await conn.query(sql, [id]);
+
+      conn.release();
+
+      return result.rows;
+    } catch (error) {
+      throw new Error(`Could not retrive reviews from the server ${error}`);
+    }
+  }
 
   async insertReview(r: review): Promise<review> {
     try {
@@ -82,7 +98,7 @@ export class reviewClass {
       if (result.rows.length > 0) {
         return true;
       } else return false;
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async checkDuplicate(
@@ -103,7 +119,7 @@ export class reviewClass {
       if (result.rows.length > 0) {
         return true;
       } else return false;
-    } catch (error) {}
+    } catch (error) { }
   }
 
   //TODO update method review
