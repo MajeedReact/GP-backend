@@ -4,4 +4,4 @@ Computer Component Builder project aims to connect the end-users with the local 
 
 # Frontend 
 For the front end which is done using angular checkout this repo: <br/>
-https://github.com/MohammedAlnajrani/CCB-frontend/tree/main/CCB-Frontend
+https://github.com/MohammedAlnajrani/CCB-frontend
